@@ -1,0 +1,6 @@
+.page-title {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-title-primary);
+  color: var(--roxo-escuro-100);
+  margin-bottom: 8px;
+}

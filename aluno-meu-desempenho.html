@@ -3,106 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <title>Adapt AI — Meu Desempenho</title>
+  <link rel="stylesheet" href="assets/css/all.css">
 </head>
-<body class="page page-aluno page-meu-desempenho">
+<body class="page-progresso-aluno">
 
-  <header class="app-header app-header--aluno">
-    <span class="app-header__logo">Adapt AI</span>
-    <button type="button" class="icon-button icon-button--perfil" aria-label="Meu perfil"></button>
+  <header class="header-desempenho">
+      <h1 class="page-title">Meu Progresso</h1>
+      <p class="page-subtitle">Sem ranking. Aqui você compara só com você mesmo.</p>
   </header>
 
-  <main class="page-content page-content--aluno">
-
-    <section class="page-title-row">
-      <h1 class="page-title">Meu desempenho</h1>
-      <p class="page-subtitle">Sem ranking. Aqui você compara só com você mesmo.</p>
-    </section>
-
+  <main>
     <!-- Progresso por conteúdo -->
-    <section class="panel panel--progresso-conteudo" aria-labelledby="progresso-conteudo-titulo">
-      <h2 id="progresso-conteudo-titulo" class="panel__titulo">Progresso por conteúdo</h2>
+    <section class="progresso-conteudo">
+      <h2 id="progresso-conteudo-titulo">Progresso por conteúdo</h2>
 
       <ul class="progresso-conteudo-lista">
         <li class="progresso-conteudo-item">
-          <span class="progresso-conteudo-item__nome">Anatomia do sistema respiratório</span>
-          <div class="barra" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-            <div class="barra__preenchido" style="width:90%"></div>
-          </div>
+          <span class="nome-conteudo">Sistema respiratório</span>
+          <!-- Colocar Barra de progresso -->
           <span class="progresso-conteudo-item__valor">90%</span>
         </li>
 
         <li class="progresso-conteudo-item">
-          <span class="progresso-conteudo-item__nome">Trocas gasosas</span>
-          <div class="barra" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
-            <div class="barra__preenchido" style="width:65%"></div>
-          </div>
+          <span class="nome-conteudo">Trocas gasosas</span>
+          <!-- Colocar Barra de progresso -->
           <span class="progresso-conteudo-item__valor">65%</span>
         </li>
 
-        <li class="progresso-conteudo-item progresso-conteudo-item--atencao">
-          <span class="progresso-conteudo-item__nome">Doenças respiratórias</span>
-          <div class="barra" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-            <div class="barra__preenchido" style="width:40%"></div>
-          </div>
+        <li class="progresso-conteudo-item">
+          <span class="nome-conteudo">Doenças respiratórias</span>
+          <!-- Colocar Barra de progresso -->
           <span class="progresso-conteudo-item__valor">40%</span>
-          <span class="tag tag--atencao">Ponto de atenção</span>
         </li>
       </ul>
     </section>
 
     <!-- Interação por formato / perfil de aprendizagem -->
-    <section class="panel panel--perfil-formato" aria-labelledby="perfil-formato-titulo">
-      <div class="panel__header">
-        <h2 id="perfil-formato-titulo" class="panel__titulo">Como você aprende melhor</h2>
-        <span class="tag tag--perfil">Perfil: Visual</span>
+    <section class="painel-perfil-formato">
+      <div class="panel-header">
+        <h2 id="perfil-formato-titulo">Como você aprende melhor</h2>
+        <span class="perfil-aluno">Perfil: Visual</span>
       </div>
 
       <ul class="formato-desempenho-lista">
         <li class="formato-desempenho-item">
           <span class="formato-desempenho-item__nome">Imagem</span>
-          <div class="barra" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
-            <div class="barra__preenchido" style="width:88%"></div>
-          </div>
+          <!-- Colocar Barra de progresso -->
           <span class="formato-desempenho-item__valor">88% de acerto</span>
         </li>
 
         <li class="formato-desempenho-item">
           <span class="formato-desempenho-item__nome">Quiz</span>
-          <div class="barra" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100">
-            <div class="barra__preenchido" style="width:74%"></div>
-          </div>
+          <!-- Colocar Barra de progresso -->
           <span class="formato-desempenho-item__valor">74% de acerto</span>
         </li>
 
         <li class="formato-desempenho-item">
           <span class="formato-desempenho-item__nome">Texto</span>
-          <div class="barra" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-            <div class="barra__preenchido" style="width:60%"></div>
-          </div>
+          <!-- Colocar Barra de progresso -->
           <span class="formato-desempenho-item__valor">60% de acerto</span>
         </li>
       </ul>
     </section>
 
     <!-- Evolução -->
-    <section class="panel panel--evolucao" aria-labelledby="evolucao-titulo">
-      <h2 id="evolucao-titulo" class="panel__titulo">Sua evolução</h2>
-      <p class="evolucao__comparativo">Nesta atividade você acertou <strong>mais que na sua última tentativa</strong>: 65% → 80%.</p>
+    <section class="panel panel--evolucao">
+      <h2 id="evolucao-titulo">Sua evolução</h2>
+      <p class="evolucao-comparativo">Nesta atividade você acertou <strong>mais que na sua última tentativa</strong>: 65% → 80%.</p>
     </section>
 
     <!-- Próxima recomendação -->
-    <section class="panel panel--proxima-recomendacao" aria-labelledby="proxima-recomendacao-titulo">
-      <h2 id="proxima-recomendacao-titulo" class="panel__titulo">Próxima recomendação</h2>
-      <p class="proxima-recomendacao__texto">Mais atividades com imagem sobre <strong>doenças respiratórias</strong>, seu ponto de atenção atual.</p>
-      <a href="aluno-atividades-personalizadas.html" class="button button--primary">Ver atividade recomendada</a>
+    <section class="painel-proxima-recomendacao">
+      <h2 id="proxima-recomendacao-titulo">Próxima recomendação</h2>
+      <p class="proxima-recomendacao-texto">Mais atividades com imagem sobre <strong>doenças respiratórias</strong>, seu ponto de atenção atual.</p>
+      <a href="aluno-atividades-personalizadas.html">Ver Atividades Personalizadas</a>
     </section>
 
   </main>
 
-  <nav class="tab-bar" aria-label="Navegação principal">
-    <a href="aluno-atividades-personalizadas.html" class="tab-bar__item">Atividades</a>
-    <a href="aluno-meu-desempenho.html" class="tab-bar__item is-active">Meu desempenho</a>
+  <!-- Menu inferior -->
+  <nav class="menu-inferior">
+    <a href="aluno-atividades-personalizadas.html">teste</a>
+    <a href="aluno-atividades.html">Atividades e Desafios</a>
   </nav>
 
+  <script src="assets/js/all.js"></script>
 </body>
 </html>

@@ -2,95 +2,42 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Adapt AI — Minhas Atividades</title>
+  <title>Adapt AI — Atividades Personalizadas</title>
+  <link rel="stylesheet" href="assets/css/all.css">
 </head>
-<body class="page page-aluno page-atividades-personalizadas">
+<body class="page-recomendacao-aluno">
 
-  <header class="app-header app-header--aluno">
-    <span class="app-header__logo">Adapt AI</span>
-    <button type="button" class="icon-button icon-button--perfil" aria-label="Meu perfil"></button>
+  <header class="header-atvd-personalizadas">
+      <h1 class="page-title">Atividades Personalizadas</h1>
   </header>
 
-  <main class="page-content page-content--aluno">
+  <main>
+    <!-- Recomendação -->
+    <section class="recomendacao-painel">
+      <h2 id="prox-recomendacao">Próxima Recomendação</h2>
 
-    <section class="saudacao">
-      <h1 class="saudacao__texto">Oi, Marina 👋</h1>
-      <p class="saudacao__aula">Sistema Respiratório — 8º Ano B</p>
-    </section>
-
-    <section class="progresso-aula" aria-label="Progresso na aula">
-      <div class="progresso-aula__barra" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-        <div class="progresso-aula__preenchido" style="width:60%"></div>
-      </div>
-      <p class="progresso-aula__texto">60% concluído · 3 de 5 atividades</p>
-    </section>
-
-    <section class="recomendacao" aria-labelledby="recomendacao-titulo">
-      <span class="tag tag--recomendado">Recomendado para você</span>
-      <h2 id="recomendacao-titulo" class="recomendacao__titulo">Desafio com imagem: troca gasosa nos alvéolos</h2>
-      <p class="recomendacao__motivo">Baseado no seu perfil: você aprende melhor com imagens.</p>
-      <a href="#" class="button button--primary">Começar atividade</a>
-    </section>
-
-    <section class="atividades-lista" aria-label="Lista de atividades da aula">
-
-      <h2 class="atividades-lista__titulo">Atividades da aula</h2>
-
-      <ul>
-        <li class="atividade-card atividade-card--concluida" data-atividade-id="1">
-          <span class="icon icon--concluido" aria-hidden="true"></span>
-          <div class="atividade-card__info">
-            <h3 class="atividade-card__titulo">Quiz: estrutura do sistema respiratório</h3>
-            <span class="tag tag--formato">Quiz</span>
-          </div>
-          <span class="atividade-card__status">Concluída</span>
+      <ul class="recomendacao-lista">
+        <li class="reforco">
+          <span class="reforco-conteudo">Troca Gasosas</span>
         </li>
 
-        <li class="atividade-card atividade-card--concluida" data-atividade-id="2">
-          <span class="icon icon--concluido" aria-hidden="true"></span>
-          <div class="atividade-card__info">
-            <h3 class="atividade-card__titulo">Desafio: o caminho do ar</h3>
-            <span class="tag tag--formato">Texto</span>
-          </div>
-          <span class="atividade-card__status">Concluída</span>
+        <li class="formato">
+          <span class="formato-conteudo">Atividade visual</span>
         </li>
 
-        <li class="atividade-card atividade-card--concluida" data-atividade-id="3">
-          <span class="icon icon--concluido" aria-hidden="true"></span>
-          <div class="atividade-card__info">
-            <h3 class="atividade-card__titulo">Desafio: identifique a estrutura</h3>
-            <span class="tag tag--formato">Imagem</span>
-          </div>
-          <span class="atividade-card__status">Concluída</span>
-        </li>
-
-        <li class="atividade-card atividade-card--atual" data-atividade-id="4">
-          <span class="icon icon--atual" aria-hidden="true"></span>
-          <div class="atividade-card__info">
-            <h3 class="atividade-card__titulo">Desafio: troca gasosa nos alvéolos</h3>
-            <span class="tag tag--formato">Imagem</span>
-          </div>
-          <span class="atividade-card__status">Atual</span>
-        </li>
-
-        <li class="atividade-card atividade-card--proxima" data-atividade-id="5">
-          <span class="icon icon--bloqueado" aria-hidden="true"></span>
-          <div class="atividade-card__info">
-            <h3 class="atividade-card__titulo">Quiz: sistema respiratório (final)</h3>
-            <span class="tag tag--formato">Quiz</span>
-          </div>
-          <span class="atividade-card__status">Próxima</span>
+        <li class="nivel">
+          <span class="nivel-conteudo">Intermediário</span>
         </li>
       </ul>
-
     </section>
-
   </main>
 
-  <nav class="tab-bar" aria-label="Navegação principal">
-    <a href="aluno-atividades-personalizadas.html" class="tab-bar__item is-active">Atividades</a>
-    <a href="aluno-meu-desempenho.html" class="tab-bar__item">Meu desempenho</a>
+  <!-- Menu inferior (ajeitar)-->
+  <nav class="menu-inferior">
+    <a href="aluno-meu-desempenho.html">Meu desempenho</a>
+    <a href="aluno-atividades.html">Atividades</a>
   </nav>
 
+  <script src="assets/js/all.js"></script>
 </body>
 </html>
