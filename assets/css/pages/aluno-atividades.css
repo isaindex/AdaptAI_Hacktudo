@@ -1,14 +1,238 @@
+/* ==========================================================================
+   Adapt AI — Aluno: Atividades & Progresso
+   ========================================================================== */
+
 .page-progresso-aluno {
   font-family: var(--font-family-primary);
   color: var(--roxo-escuro-100);
   background-color: #FAFAFA;
   min-height: 100vh;
-  padding-bottom: 90px; 
 }
 
-/*  Header  */
+/* ==========================================================================
+   Header Mobile com Menu Hambúrguer (aluno)
+   ========================================================================== */
+.aluno-mobile-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background-color: var(--roxo-100);
+  padding: 14px 16px;
+}
+
+.btn-hamburguer {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.hamburguer-icon,
+.hamburguer-icon::before,
+.hamburguer-icon::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--branco);
+  border-radius: var(--radius-full);
+}
+
+.hamburguer-icon {
+  position: relative;
+}
+
+.hamburguer-icon::before {
+  position: absolute;
+  left: 0;
+  top: -6px;
+}
+
+.hamburguer-icon::after {
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+.mobile-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobile-header__logo {
+  height: 22px;
+}
+
+.mobile-header__brand-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--branco);
+}
+
+.mobile-header__user {
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Sidebar do Aluno (menu hambúrguer)
+   ========================================================================== */
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 40;
+}
+
+.sidebar-backdrop.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.aluno-app-layout {
+  position: relative;
+}
+
+.sidebar-aluno {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 260px;
+  max-width: 80vw;
+  background-color: var(--roxo-100);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  z-index: 50;
+  box-shadow: var(--sombra-card-hover);
+}
+
+.sidebar-aluno.is-open {
+  transform: translateX(0);
+}
+
+.sidebar-aluno__brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.sidebar-aluno__logo {
+  height: 20px;
+}
+
+.sidebar-aluno__brand-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--branco);
+}
+
+.btn-fechar-sidebar {
+  background: transparent;
+  border: none;
+  color: var(--branco);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sidebar-aluno__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-aluno__nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  border-radius: var(--radius-md);
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-aluno__nav-item img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+  opacity: 0.75;
+}
+
+.sidebar-aluno__nav-item:hover,
+.sidebar-aluno__nav-item.is-active {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: var(--branco);
+}
+
+.sidebar-aluno__nav-item:hover img,
+.sidebar-aluno__nav-item.is-active img {
+  opacity: 1;
+}
+
+.sidebar-aluno__user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-aluno__avatar {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background-color: var(--branco);
+  color: var(--roxo-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.sidebar-aluno__user-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sidebar-aluno__user-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--branco);
+}
+
+.sidebar-aluno__user-role {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Cabeçalho da página */
 .header-atividades {
-  background-color: #FFFFFF;
+  background-color: var(--branco);
   padding: 24px 16px 20px;
 }
 
@@ -24,9 +248,9 @@
   margin: 0;
 }
 
-/*Conteúdo geral */
-main {
-  padding: 16px;
+/* Conteúdo geral */
+.main-conteudo-aluno {
+  padding: 16px 16px 32px;
 }
 
 /* Matéria em destaque */
@@ -34,18 +258,24 @@ main {
   display: flex;
   align-items: center;
   gap: 12px;
-  background-color: #FFFFFF;
-  border-radius: 16px;
+  background: var(--branco);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--radius-lg);
   padding: 16px;
   margin-bottom: 16px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--sombra-card);
+  transition: all 0.2s ease;
+}
+
+.materia-destaque:hover {
+  box-shadow: var(--sombra-card-hover);
 }
 
 .materia-destaque__thumb {
   flex-shrink: 0;
   width: 48px;
   height: 48px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   background-color: var(--roxo-20);
   display: flex;
   align-items: center;
@@ -60,7 +290,7 @@ main {
 
 .materia-destaque__info {
   flex: 1;
-  min-width: 0; 
+  min-width: 0;
 }
 
 .materia-destaque__titulo {
@@ -86,14 +316,14 @@ main {
   flex: 1;
   height: 8px;
   background-color: var(--roxo-20);
-  border-radius: 4px;
+  border-radius: var(--radius-full);
   overflow: hidden;
 }
 
 .materia-destaque__progresso .barra__preenchido {
   height: 100%;
   background-color: var(--roxo-80);
-  border-radius: 4px;
+  border-radius: var(--radius-full);
 }
 
 .materia-destaque__valor {
@@ -111,10 +341,11 @@ main {
 
 /* Painel de desafios */
 .desafios-painel {
-  background-color: #FFFFFF;
-  border-radius: 16px;
+  background: var(--branco);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--radius-lg);
   padding: 4px 16px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--sombra-card);
 }
 
 .desafios-lista {
@@ -130,8 +361,13 @@ main {
   justify-content: center;
   min-height: 56px;
   padding: 14px 32px 14px 40px; /* espaço: esquerda pro círculo, direita pra seta */
-  border-bottom: 1px solid var(--roxo-20);
+  border-bottom: 1px solid var(--borda-suave);
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.desafio-item:hover {
+  background-color: var(--roxo-10);
 }
 
 .desafio-item:last-child {
@@ -159,9 +395,9 @@ main {
   transform: translateY(-50%);
   width: 22px;
   height: 22px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   border: 2px solid var(--roxo-20);
-  background-color: #FFFFFF;
+  background-color: var(--branco);
 }
 
 /* Seta de navegação (direita) */
@@ -176,7 +412,7 @@ main {
   color: var(--roxo-escuro-20);
 }
 
-/*  Status "concluído" nos dois primeiros desafios */
+/* Status "concluído" nos dois primeiros desafios */
 .desafio-item:nth-child(1)::before,
 .desafio-item:nth-child(2)::before {
   border-color: var(--verde-80);
@@ -187,33 +423,83 @@ main {
   background-size: 12px;
 }
 
-/* Menu inferior */
-.menu-inferior {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  background-color: #FFFFFF;
-  border-top: 1px solid var(--roxo-20);
-  padding: 10px 16px;
-}
-
-.menu-inferior a {
-  flex: 1;
-  text-align: center;
-  text-decoration: none;
-  font-size: var(--font-size-caption);
-  font-weight: 600;
-  color: var(--roxo-escuro-20);
-  padding: 6px 4px;
-}
-
-/*  Tablet */
-@media (min-width: 600px) {
+/* ==========================================================================
+   Responsividade: Atividades do Aluno
+   
+   ========================================================================== */
+@media (min-width: 768px) {
   .page-progresso-aluno {
     max-width: 480px;
     margin: 0 auto;
     box-shadow: 0 0 0 1px #F0F0F0;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-atividades {
+    padding: 20px 16px 16px;
+  }
+
+  .main-conteudo-aluno {
+    padding: 14px 14px 28px;
+  }
+
+  .materia-destaque {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .materia-destaque__thumb {
+    width: 44px;
+    height: 44px;
+  }
+
+  .desafios-painel {
+    padding: 4px 14px;
+  }
+
+  .desafio-item {
+    padding: 12px 28px 12px 36px;
+    min-height: 52px;
+  }
+
+  .sidebar-aluno {
+    width: 240px;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-atividades {
+    padding: 18px 14px 14px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .main-conteudo-aluno {
+    padding: 12px 12px 24px;
+  }
+
+  .materia-destaque {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .materia-destaque__thumb {
+    width: 40px;
+    height: 40px;
+  }
+
+  .desafio-item {
+    padding: 10px 26px 10px 32px;
+    min-height: 48px;
+  }
+
+  .sidebar-aluno {
+    width: 220px;
+    max-width: 85vw;
+    padding: 16px 14px;
   }
 }

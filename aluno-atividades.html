@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Adapt AI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adapt AI — Minhas Atividades</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
@@ -10,15 +11,73 @@
   <link rel="stylesheet" href="assets/css/pages/aluno-atividades.css">
   
 </head>
-<body class="page-progresso-aluno">
+<body class="page page-aluno page-progresso-aluno">
 
-  <header class="header-atividades">
-      <h1 class="page-title">Olá, João!</h1>
-      <p class="page-subtitle">Aqui estão suas atividades.</p>
+  <!-- Header Mobile com Menu Hambúrguer -->
+  <header class="aluno-mobile-header">
+    <button type="button" class="btn-hamburguer" id="btn-hamburguer-aluno" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar-aluno">
+      <span class="hamburguer-icon"></span>
+    </button>
+    <div class="mobile-header__brand">
+      <img src="assets/images/logo-branca.svg" alt="Adapt IA" class="mobile-header__logo">
+      <span class="mobile-header__brand-title">adapt IA</span>
+    </div>
+    <div class="mobile-header__user">
+      <div class="sidebar-aluno__avatar">J</div>
+    </div>
   </header>
 
-  <main>
-    <section class="materia-destaque">
+  <!-- Backdrop escuro para fechar ao clicar fora -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop-aluno"></div>
+
+  <div class="aluno-app-layout">
+    <!-- Sidebar Esquerda -->
+    <aside class="sidebar-aluno" id="sidebar-aluno">
+      <div>
+        <div class="sidebar-aluno__brand">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <img src="assets/images/logo-branca.svg" alt="Adapt IA" class="sidebar-aluno__logo">
+            <span class="sidebar-aluno__brand-title">adapt IA</span>
+          </div>
+          <button type="button" class="btn-fechar-sidebar" id="btn-fechar-sidebar-aluno" aria-label="Fechar menu">&times;</button>
+        </div>
+
+        <nav class="sidebar-aluno__nav">
+          <a href="aluno-atividades.html" class="sidebar-aluno__nav-item is-active">
+            <img src="assets/images/icon/menu-desk/book-open.svg" alt="" aria-hidden="true">
+            <span>Desafios</span>
+          </a>
+          <a href="aluno-meu-desempenho.html" class="sidebar-aluno__nav-item">
+            <img src="assets/images/icon/menu-desk/layout-dashboard.svg" alt="" aria-hidden="true">
+            <span>Desempenho</span>
+          </a>
+          <a href="aluno-atividades-personalizadas.html" class="sidebar-aluno__nav-item">
+            <img src="assets/images/icon/menu-desk/calendar-check.svg" alt="" aria-hidden="true">
+            <span>Atividades Personalizadas</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Rodapé do Usuário -->
+      <div class="sidebar-aluno__user">
+        <div class="sidebar-aluno__avatar">J</div>
+        <div class="sidebar-aluno__user-info">
+          <span class="sidebar-aluno__user-name">João</span>
+          <span class="sidebar-aluno__user-role">2º ano · Biologia</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-conteudo-aluno">
+      <!-- Cabeçalho -->
+      <header class="header-atividades">
+        <h1 class="page-title">Olá, João!</h1>
+        <p class="page-subtitle">Aqui estão suas atividades.</p>
+      </header>
+
+      <!-- Matéria em destaque -->
+      <section class="materia-destaque">
       <div class="materia-destaque__thumb">
         <img src="assets/images/icon/checkpoint-desafio-final.svg" alt="">
       </div>
@@ -56,14 +115,9 @@
         </li>
       </ul>
     </section>
-  </main>
+    </main>
+  </div>
 
-  <!-- Menu inferior -->
-  <nav class="menu-inferior">
-    <a href="aluno-meu-desempenho.html">Meu desempenho</a>
-    <a href="aluno-atividades-personalizadas.html">Ver atividades personalizadas</a>
-  </nav>
-
-  <script src="assets/js/all.js"></script>
+  <script src="assets/js/pages/aluno/aluno-atividades.js"></script>
 </body>
 </html>
