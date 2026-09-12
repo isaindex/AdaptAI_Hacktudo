@@ -1,0 +1,219 @@
+.page-progresso-aluno {
+  font-family: var(--font-family-primary);
+  color: var(--roxo-escuro-100);
+  background-color: #FAFAFA;
+  min-height: 100vh;
+  padding-bottom: 90px; 
+}
+
+/*  Header  */
+.header-atividades {
+  background-color: #FFFFFF;
+  padding: 24px 16px 20px;
+}
+
+.page-title {
+  font-size: var(--font-size-title-primary);
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+
+.page-subtitle {
+  font-size: var(--font-size-support);
+  color: var(--roxo-escuro-20);
+  margin: 0;
+}
+
+/*Conteúdo geral */
+main {
+  padding: 16px;
+}
+
+/* Matéria em destaque */
+.materia-destaque {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.materia-destaque__thumb {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: var(--roxo-20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.materia-destaque__thumb img {
+  width: 26px;
+  height: 26px;
+}
+
+.materia-destaque__info {
+  flex: 1;
+  min-width: 0; 
+}
+
+.materia-destaque__titulo {
+  font-size: var(--font-size-support);
+  font-weight: 800;
+  margin: 0 0 2px;
+}
+
+.materia-destaque__subtitulo {
+  font-size: var(--font-size-caption);
+  color: var(--roxo-escuro-20);
+  margin: 0 0 10px;
+}
+
+.materia-destaque__progresso {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.materia-destaque__progresso .barra {
+  flex: 1;
+  height: 8px;
+  background-color: var(--roxo-20);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.materia-destaque__progresso .barra__preenchido {
+  height: 100%;
+  background-color: var(--roxo-80);
+  border-radius: 4px;
+}
+
+.materia-destaque__valor {
+  font-size: var(--font-size-caption);
+  font-weight: 700;
+  color: var(--roxo-80);
+  flex-shrink: 0;
+}
+
+.materia-destaque__contador {
+  font-size: var(--font-size-icon-text);
+  color: var(--roxo-escuro-20);
+  margin: 0;
+}
+
+/* Painel de desafios */
+.desafios-painel {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 4px 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.desafios-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.desafio-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 56px;
+  padding: 14px 32px 14px 40px; /* espaço: esquerda pro círculo, direita pra seta */
+  border-bottom: 1px solid var(--roxo-20);
+  cursor: pointer;
+}
+
+.desafio-item:last-child {
+  border-bottom: none;
+}
+
+.nome-desafio {
+  font-size: var(--font-size-support);
+  font-weight: 700;
+  color: var(--roxo-escuro-100);
+}
+
+.subtitutlo-desafio {
+  font-size: var(--font-size-caption);
+  color: var(--roxo-escuro-20);
+  margin: 2px 0 0;
+}
+
+/* Círculo de status (esquerda) */
+.desafio-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--roxo-20);
+  background-color: #FFFFFF;
+}
+
+/* Seta de navegação (direita) */
+.desafio-item::after {
+  content: "\203A"; /* › */
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--roxo-escuro-20);
+}
+
+/*  Status "concluído" nos dois primeiros desafios */
+.desafio-item:nth-child(1)::before,
+.desafio-item:nth-child(2)::before {
+  border-color: var(--verde-80);
+  background-color: var(--verde-80);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+}
+
+/* Menu inferior */
+.menu-inferior {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--roxo-20);
+  padding: 10px 16px;
+}
+
+.menu-inferior a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  font-size: var(--font-size-caption);
+  font-weight: 600;
+  color: var(--roxo-escuro-20);
+  padding: 6px 4px;
+}
+
+/*  Tablet */
+@media (min-width: 600px) {
+  .page-progresso-aluno {
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 0 0 1px #F0F0F0;
+  }
+}
