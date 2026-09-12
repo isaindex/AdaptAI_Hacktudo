@@ -1,1 +1,137 @@
-/* Estilos específicos para a página de Atividades Personalizadas do Aluno */
+/* ==========================================================================
+   Adapt AI — Atividades Personalizadas (aluno-atividades-personalizadas.css)
+   Usa as variáveis do :root definidas em assets/css/all.css
+   ========================================================================== */
+
+.page-recomendacao-aluno {
+  font-family: var(--font-family-primary);
+  color: var(--roxo-escuro-100);
+  background-color: #FAFAFA;
+  min-height: 100vh;
+  padding-bottom: 90px; /* espaço pro menu inferior fixo */
+}
+
+/*  Header  */
+.header-atvd-personalizadas {
+  background-color: #FFFFFF;
+  padding: 24px 16px 20px;
+}
+
+.page-title {
+  font-size: var(--font-size-title-primary);
+  font-weight: 800;
+  margin: 0;
+}
+
+/* Conteúdo geral */
+main {
+  padding: 16px;
+}
+
+/* Painel de recomendação  */
+.recomendacao-painel {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.recomendacao-painel h2 {
+  font-size: var(--font-size-title-secondary);
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.recomendacao-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Cada linha: ícone + rótulo (gerado via CSS) + valor */
+.recomendacao-lista li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px 12px 44px;
+  background-color: #F9F8FE;
+  border-radius: 12px;
+}
+
+/* Ícone circular à esquerda */
+.recomendacao-lista li::before {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 20%;
+  background-color: var(--roxo-20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reforco::before { content: "🎯"; }
+.formato::before { content: "🖼️"; }
+.nivel::before { content: "📊"; }
+
+/* Ícone + texto  */
+.recomendacao-texto {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.recomendacao-rotulo {
+  font-size: var(--font-size-support);
+  font-weight: 600;
+  color: var(--roxo-escuro-100);
+  margin: 10px ;
+}
+
+.reforco-conteudo,
+.formato-conteudo,
+.nivel-conteudo {
+  font-size: var(--font-size-support);
+  font-weight: 700;
+  color: var(--roxo-escuro-80);
+}
+
+/* Menu inferior */
+.menu-inferior {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--roxo-20);
+  padding: 10px 16px;
+}
+
+.menu-inferior a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  font-size: var(--font-size-caption);
+  font-weight: 600;
+  color: var(--roxo-escuro-20);
+  padding: 6px 4px;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .page-recomendacao-aluno {
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 0 0 1px #F0F0F0;
+  }
+}
