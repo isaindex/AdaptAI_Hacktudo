@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adapt AI — Questionário</title>
+  <link rel="stylesheet" href="assets/css/pages/aluno-questionario.css">
+</head>
+<body class="page-questionario">
+
+  <header class="header-questionario">
+    <span class="logo-nome">Adapt AI</span>
+  </header>
+
+  <main class="page-content page-content--aluno">
+
+    <!-- Barra de progresso do questionário -->
+    <div class="barra-progresso">
+        <!-- Colocar barra de progresso -->
+      <div class="form-progresso" id="formProgresso"></div>
+    </div>
+    <p class="form-progresso-texto"><span id="perguntaAtual">0</span> de <span id="totalPerguntas">3</span></p>
+
+    <form id="formQuestionario" class="quiz-form">
+
+      <!-- Pergunta 1 -->
+      <fieldset class="form-pergunta">
+        <legend class="form-pergunta__enunciado">Como você prefere aprender?</legend>
+
+        <label class="form-opcao">
+          <input type="checkbox" name="p1">
+          <span>Lendo textos</span>
+        </label>
+
+        <label class="form-opcao">
+          <input type="checkbox" name="p1">
+          <span>Assistindo vídeos</span>
+        </label>
+
+        <label class="form-opcao">
+          <input type="checkbox" name="p1">
+          <span>Ouvindo áudios</span>
+        </label>
+
+        <label class="form-opcao">
+          <input type="checkbox" name="p1">
+          <span>Fazendo exercícios práticos</span>
+        </label>
+      </fieldset>
+
+      
+
+      <!-- Pergunta 2 -->
+      <fieldset class="form-pergunta" hidden>
+        <legend class="form-pergunta__enunciado">Quais dificuldades você mais sente ao estudar?</legend>
+
+        <label class="form-opcao">
+          <input type="checkbox" name="p2">
+          <span>Falta de tempo</span>
+        </label>
+
+        <label class="form-opcao">
+          <input type="checkbox" name="p2">
+          <span>Dificuldade de concentração</span>
+        </label>
+
+        <label class="form-opcao">
+          <input type="checkbox" name="p2">
+          <span>Conteúdo muito difícil</span>
+        </label>
+
+        <label class="form-opcao">
+          <input type="checkbox" name="p2">
+          <span>Falta de motivação</span>
+        </label>
+      </fieldset>
+      
+      <!-- Pergunta 3 -->
+      <fieldset class="form-pergunta" hidden>
+        <legend class="form-pergunta__enunciado">Quais horários você costuma estudar?</legend>
+
+        <label class="form-opcao">
+          <input type="checkbox" name="p3">
+          <span>Manhã</span>
+        </label>
+
+        <label class="form-opcao">
+          <input type="checkbox" name="p3">
+          <span>Tarde</span>
+        </label>
+
+        <label class="form-opcao">
+          <input type="checkbox" name="p3">
+          <span>Noite</span>
+        </label>
+
+        <label class="form-opcao">
+          <input type="checkbox" name="p3">
+          <span>Madrugada</span>
+        </label>
+      </fieldset>
+
+      <div class="quiz-navegacao">
+        <button type="button" id="btnAvancar" class="button--primary">Próxima</button>
+      </div>
+
+    </form>
+
+    <!-- Agradecimento final -->
+    <section id="resultadoFinal" class="painel-resultado" hidden aria-live="polite">
+      <h2 class="panel__titulo">Obrigado por responder!</h2>
+      <p id="resultadoTexto" class="resultado__texto">
+        Suas respostas foram registradas com sucesso.
+      </p>
+    </section>
+
+  </main>
+
+  <script src="assets/js/pages/aluno/aluno_form.js"></script>
+</body>
+</html>
