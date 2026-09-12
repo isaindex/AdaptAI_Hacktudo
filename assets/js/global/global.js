@@ -7,6 +7,7 @@
 window.AdaptAI = window.AdaptAI || {};
 
 (function (AdaptAI) {
+
   function qs(seletor, escopo) {
     return (escopo || document).querySelector(seletor);
   }
@@ -27,37 +28,37 @@ window.AdaptAI = window.AdaptAI || {};
   function abrirCardFlutuante(opcoes) {
     const { titulo, conteudoHTML, fechavel = true, aoFechar } = opcoes;
 
-    const overlay = document.createElement("div");
-    overlay.className = "floating-overlay";
-    overlay.setAttribute("role", "dialog");
-    overlay.setAttribute("aria-modal", "true");
+    const overlay = document.createElement('div');
+    overlay.className = 'floating-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
 
     overlay.innerHTML = `
       <div class="floating-card">
         <header class="floating-card__header">
-          <h2 class="floating-card__titulo">${titulo || ""}</h2>
-          ${fechavel ? '<button type="button" class="floating-card__fechar" aria-label="Fechar">&times;</button>' : ""}
+          <h2 class="floating-card__titulo">${titulo || ''}</h2>
+          ${fechavel ? '<button type="button" class="floating-card__fechar" aria-label="Fechar">&times;</button>' : ''}
         </header>
-        <div class="floating-card__corpo">${conteudoHTML || ""}</div>
+        <div class="floating-card__corpo">${conteudoHTML || ''}</div>
       </div>
     `;
 
     function fechar() {
       overlay.remove();
-      document.removeEventListener("keydown", aoTeclarEsc);
-      if (typeof aoFechar === "function") aoFechar();
+      document.removeEventListener('keydown', aoTeclarEsc);
+      if (typeof aoFechar === 'function') aoFechar();
     }
 
     function aoTeclarEsc(evento) {
-      if (evento.key === "Escape" && fechavel) fechar();
+      if (evento.key === 'Escape' && fechavel) fechar();
     }
 
     if (fechavel) {
-      overlay.addEventListener("click", function (evento) {
+      overlay.addEventListener('click', function (evento) {
         if (evento.target === overlay) fechar();
       });
-      qs(".floating-card__fechar", overlay).addEventListener("click", fechar);
-      document.addEventListener("keydown", aoTeclarEsc);
+      qs('.floating-card__fechar', overlay).addEventListener('click', fechar);
+      document.addEventListener('keydown', aoTeclarEsc);
     }
 
     document.body.appendChild(overlay);
@@ -66,7 +67,7 @@ window.AdaptAI = window.AdaptAI || {};
   }
 
   function fecharTodosCardsFlutuantes() {
-    qsa(".floating-overlay").forEach(function (overlay) {
+    qsa('.floating-overlay').forEach(function (overlay) {
       overlay.remove();
     });
   }
@@ -74,6 +75,7 @@ window.AdaptAI = window.AdaptAI || {};
   AdaptAI.util = { qs, qsa };
   AdaptAI.ui = {
     abrirCardFlutuante,
-    fecharTodosCardsFlutuantes,
+    fecharTodosCardsFlutuantes
   };
+
 })(window.AdaptAI);
