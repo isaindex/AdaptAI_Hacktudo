@@ -1,6 +1,228 @@
-.page-title {
+.page-progresso-aluno {
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-title-primary);
   color: var(--roxo-escuro-100);
-  margin-bottom: 8px;
+  background-color: #FAFAFA;
+  min-height: 100vh;
+  padding-bottom: 90px; 
+}
+
+/* ===== Header ===== */
+.header-desempenho {
+  background-color: #FFFFFF;
+  padding: 24px 16px 20px;
+}
+ 
+/* Mascote + logotipo, mesmo padrão do aluno-form.css */
+.logo-nome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+ 
+.logo-nome img:first-child {
+  width: 26px;
+  height: 26px;
+}
+ 
+.logo-nome img:last-child {
+  height: 20px;
+  width: auto;
+}
+ 
+.page-title {
+  font-size: var(--font-size-title-primary);
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+ 
+.page-subtitle {
+  font-size: var(--font-size-support);
+  color: var(--roxo-escuro-20);
+  margin: 0;
+}
+
+/* ===== Conteúdo geral ===== */
+main {
+  padding: 16px;
+}
+
+/* ===== Cards / painéis ===== */
+.progresso-conteudo,
+.painel-perfil-formato,
+.panel--evolucao,
+.painel-proxima-recomendacao {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.progresso-conteudo h2,
+.painel-perfil-formato h2,
+.panel--evolucao h2,
+.painel-proxima-recomendacao h2 {
+  font-size: var(--font-size-title-secondary);
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+/* ===== Listas com barra de progresso ===== */
+.progresso-conteudo-lista,
+.formato-desempenho-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.progresso-conteudo-item,
+.formato-desempenho-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 8px;
+}
+
+.nome-conteudo,
+.formato-desempenho-item__nome {
+  font-size: var(--font-size-support);
+  font-weight: 600;
+  color: var(--roxo-escuro-100);
+}
+
+.progresso-conteudo-item__valor,
+.formato-desempenho-item__valor {
+  font-size: var(--font-size-caption);
+  font-weight: 700;
+  color: var(--roxo-80);
+}
+
+.progresso-conteudo-item::after,
+.formato-desempenho-item::after {
+  content: "";
+  flex-basis: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--roxo-20);
+}
+
+/* As barrinhas nao estão dinamicas, pra mudar elas teria que mudar a % dos backgrounds */
+/* Progresso por conteúdo: Sistema respiratório 90% / Trocas gasosas 65% / Doenças respiratórias 40% */
+.progresso-conteudo-item:nth-child(1)::after {
+  background: linear-gradient(to right, var(--roxo-80) 90%, var(--roxo-20) 90%);
+}
+.progresso-conteudo-item:nth-child(2)::after {
+  background: linear-gradient(to right, var(--roxo-80) 65%, var(--roxo-20) 65%);
+}
+.progresso-conteudo-item:nth-child(3)::after {
+  background: linear-gradient(to right, var(--roxo-80) 40%, var(--roxo-20) 40%);
+}
+
+/* Como você aprende melhor: Imagem 88% / Quiz 74% / Texto 60% */
+.formato-desempenho-item:nth-child(1)::after {
+  background: linear-gradient(to right, var(--roxo-80) 88%, var(--roxo-20) 88%);
+}
+.formato-desempenho-item:nth-child(2)::after {
+  background: linear-gradient(to right, var(--roxo-80) 74%, var(--roxo-20) 74%);
+}
+.formato-desempenho-item:nth-child(3)::after {
+  background: linear-gradient(to right, var(--roxo-80) 60%, var(--roxo-20) 60%);
+}
+
+/* ===== Cabeçalho do painel de perfil (título + tag) ===== */
+.panel-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.panel-header h2 {
+  margin-bottom: 0;
+}
+
+.perfil-aluno {
+  background-color: var(--roxo-20);
+  color: var(--roxo-80);
+  font-size: var(--font-size-icon-text);
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ===== Evolução ===== */
+.evolucao-comparativo {
+  font-size: var(--font-size-support);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.evolucao-comparativo strong {
+  color: var(--roxo-80);
+}
+
+/* ===== Próxima recomendação ===== */
+.proxima-recomendacao-texto {
+  font-size: var(--font-size-support);
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.painel-proxima-recomendacao a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--roxo-80);
+  color: #FFFFFF;
+  font-size: var(--font-size-support);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 14px;
+  border-radius: 999px;
+  box-sizing: border-box;
+}
+
+.painel-proxima-recomendacao a:active {
+  opacity: 0.9;
+}
+
+/* ===== Menu inferior ===== */
+.menu-inferior {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--roxo-20);
+  padding: 10px 16px;
+}
+
+.menu-inferior a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  font-size: var(--font-size-caption);
+  font-weight: 600;
+  color: var(--roxo-escuro-20);
+  padding: 6px 0;
+}
+
+/*   Tablet */
+@media (min-width: 600px) {
+  .page-progresso-aluno {
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 0 0 1px #F0F0F0;
+  }
 }

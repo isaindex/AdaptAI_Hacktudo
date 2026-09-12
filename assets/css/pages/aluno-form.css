@@ -228,6 +228,7 @@ form > fieldset:nth-of-type(3) label.form-opcao:nth-of-type(4)::before { content
   color: var(--roxo-escuro-20);
 }
 
+
 @media (min-width: 600px) {
   .page-questionario {
     max-width: 480px;
