@@ -1,110 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Adapt AI — Acompanhamento da Turma</title>
-</head>
-<body class="page page-professor page-acompanhamento">
-
-  <header class="app-header">
-    <div class="app-header__brand">
-      <span class="app-header__logo">Adapt AI</span>
-    </div>
-    <nav class="app-header__nav">
-      <a href="professor-turmas.html" class="app-header__nav-item">Turmas</a>
-      <a href="professor-criar-atividade.html" class="app-header__nav-item">Criar atividade</a>
-      <a href="professor-acompanhamento.html" class="app-header__nav-item is-active">Acompanhamento</a>
-    </nav>
-    <div class="app-header__user">
-      <button type="button" class="icon-button icon-button--notifications" aria-label="Notificações"></button>
-      <div class="user-badge">
-        <span class="user-badge__name">Prof. Camila Nogueira</span>
-        <span class="user-badge__role">Ciências</span>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adapt AI — Acompanhamento da Turma</title>
+  </head>
+  <body class="page page-professor page-acompanhamento">
+    <header class="app-header">
+      <div class="app-header__brand">
+        <span class="app-header__logo">Adapt AI</span>
       </div>
-    </div>
-  </header>
-
-  <main class="page-content" data-turma-id="8b">
-
-    <div class="page-title-row">
-      <div>
-        <a href="professor-turmas.html" class="breadcrumb-back">Turmas</a>
-        <h1 class="page-title">8º Ano B — Acompanhamento</h1>
-        <p class="page-subtitle">Atividade atual: Sistema Respiratório</p>
+      <nav class="app-header__nav">
+        <a href="professor-turmas.html" class="app-header__nav-item">Turmas</a>
+        <a href="professor-criar-atividade.html" class="app-header__nav-item"
+          >Criar atividade</a
+        >
+        <a
+          href="professor-acompanhamento.html"
+          class="app-header__nav-item is-active"
+          >Acompanhamento</a
+        >
+      </nav>
+      <div class="app-header__user">
+        <button
+          type="button"
+          class="icon-button icon-button--notifications"
+          aria-label="Notificações"
+        ></button>
+        <div class="user-badge">
+          <span class="user-badge__name">Prof. Camila Nogueira</span>
+          <span class="user-badge__role">Ciências</span>
+        </div>
       </div>
-    </div>
+    </header>
 
-    <!-- Visão geral -->
-    <section class="panel panel--visao-geral" aria-labelledby="visao-geral-titulo">
-      <h2 id="visao-geral-titulo" class="panel__titulo">Visão geral</h2>
-      <dl class="metric-grid">
-        <div class="metric-card">
-          <dt>Alunos</dt>
-          <dd>31</dd>
+    <main class="page-content" id="acompanhamento-conteudo" data-turma-id="8b">
+      <div class="page-title-row">
+        <div>
+          <a href="professor-turmas.html" class="breadcrumb-back">Turmas</a>
+          <h1 class="page-title" id="turma-titulo">
+            8º Ano B — Acompanhamento
+          </h1>
+          <p class="page-subtitle">
+            Atividade atual:
+            <span id="turma-atividade-atual">Sistema Respiratório</span>
+          </p>
         </div>
-        <div class="metric-card">
-          <dt>Conclusão</dt>
-          <dd>72%</dd>
+
+        <div class="field field--seletor-turma">
+          <label for="turma-select">Turma</label>
+          <select id="turma-select" name="turma-select">
+            <option value="7a">7º Ano A</option>
+            <option value="8b" selected>8º Ano B</option>
+            <option value="9a">9º Ano A</option>
+          </select>
         </div>
-        <div class="metric-card">
-          <dt>Desempenho médio</dt>
-          <dd>68%</dd>
-        </div>
-      </dl>
-    </section>
+      </div>
 
-    <!-- Dificuldades -->
-    <section class="panel panel--dificuldades" aria-labelledby="dificuldades-titulo">
-      <h2 id="dificuldades-titulo" class="panel__titulo">Dificuldades</h2>
-      <p class="panel__descricao">Conteúdos com maior taxa de erro.</p>
-      <ol class="ranking-list">
-        <li class="ranking-item">
-          <span class="ranking-item__nome">Trocas gasosas nos alvéolos</span>
-          <span class="ranking-item__valor">42% de erro</span>
-        </li>
-        <li class="ranking-item">
-          <span class="ranking-item__nome">Nomenclatura das estruturas</span>
-          <span class="ranking-item__valor">31% de erro</span>
-        </li>
-        <li class="ranking-item">
-          <span class="ranking-item__nome">Função do diafragma</span>
-          <span class="ranking-item__valor">18% de erro</span>
-        </li>
-      </ol>
-    </section>
+      <!-- Visão geral -->
+      <section
+        class="panel panel--visao-geral"
+        aria-labelledby="visao-geral-titulo"
+      >
+        <h2 id="visao-geral-titulo" class="panel__titulo">Visão geral</h2>
+        <dl class="metric-grid">
+          <div class="metric-card">
+            <dt>Alunos</dt>
+            <dd id="metric-alunos">31</dd>
+          </div>
+          <div class="metric-card">
+            <dt>Conclusão</dt>
+            <dd id="metric-conclusao">72%</dd>
+          </div>
+          <div class="metric-card">
+            <dt>Desempenho médio</dt>
+            <dd id="metric-desempenho">68%</dd>
+          </div>
+        </dl>
+      </section>
 
-    <!-- Formatos -->
-    <section class="panel panel--formatos" aria-labelledby="formatos-titulo">
-      <h2 id="formatos-titulo" class="panel__titulo">Formatos</h2>
-      <p class="panel__descricao">Formatos com maior conclusão e engajamento.</p>
-      <ul class="formato-list">
-        <li class="formato-item">
-          <span class="formato-item__nome">Imagem</span>
-          <span class="formato-item__valor">89% de conclusão</span>
-        </li>
-        <li class="formato-item">
-          <span class="formato-item__nome">Quiz</span>
-          <span class="formato-item__valor">76% de conclusão</span>
-        </li>
-        <li class="formato-item">
-          <span class="formato-item__nome">Texto</span>
-          <span class="formato-item__valor">58% de conclusão</span>
-        </li>
-      </ul>
-    </section>
+      <!-- Dificuldades -->
+      <section
+        class="panel panel--dificuldades"
+        aria-labelledby="dificuldades-titulo"
+      >
+        <h2 id="dificuldades-titulo" class="panel__titulo">Dificuldades</h2>
+        <p class="panel__descricao">Conteúdos com maior taxa de erro.</p>
+        <ol class="ranking-list" id="dificuldades-lista">
+          <li class="ranking-item">
+            <span class="ranking-item__nome">Trocas gasosas nos alvéolos</span>
+            <span class="ranking-item__valor">42% de erro</span>
+          </li>
+          <li class="ranking-item">
+            <span class="ranking-item__nome">Nomenclatura das estruturas</span>
+            <span class="ranking-item__valor">31% de erro</span>
+          </li>
+          <li class="ranking-item">
+            <span class="ranking-item__nome">Função do diafragma</span>
+            <span class="ranking-item__valor">18% de erro</span>
+          </li>
+        </ol>
+      </section>
 
-    <!-- Insights -->
-    <section class="panel panel--insights" aria-labelledby="insights-titulo">
-      <h2 id="insights-titulo" class="panel__titulo">Insights</h2>
-      <ul class="insight-list">
-        <li class="insight-item">Alunos com atividades em imagem concluem 30% mais rápido do que com texto puro nesta turma.</li>
-        <li class="insight-item">78% dos alunos que erraram a questão sobre alvéolos acertaram após revisar o desafio com imagem.</li>
-        <li class="insight-item">A turma tem mais dificuldade em questões sobre trocas gasosas do que sobre nomenclatura das estruturas.</li>
-      </ul>
-      <p class="panel__uso-pedagogico">Sugestão: reforçar "trocas gasosas nos alvéolos" com mais atividades em formato de imagem.</p>
-    </section>
+      <!-- Formatos -->
+      <section class="panel panel--formatos" aria-labelledby="formatos-titulo">
+        <h2 id="formatos-titulo" class="panel__titulo">Formatos</h2>
+        <p class="panel__descricao">
+          Formatos com maior conclusão e engajamento.
+        </p>
+        <ul class="formato-list" id="formatos-lista">
+          <li class="formato-item">
+            <span class="formato-item__nome">Imagem</span>
+            <span class="formato-item__valor">89% de conclusão</span>
+          </li>
+          <li class="formato-item">
+            <span class="formato-item__nome">Quiz</span>
+            <span class="formato-item__valor">76% de conclusão</span>
+          </li>
+          <li class="formato-item">
+            <span class="formato-item__nome">Texto</span>
+            <span class="formato-item__valor">58% de conclusão</span>
+          </li>
+        </ul>
+      </section>
 
-  </main>
+      <!-- Insights -->
+      <section class="panel panel--insights" aria-labelledby="insights-titulo">
+        <h2 id="insights-titulo" class="panel__titulo">Insights</h2>
+        <ul class="insight-list" id="insights-lista">
+          <li class="insight-item">
+            Alunos com atividades em imagem concluem 30% mais rápido do que com
+            texto puro nesta turma.
+          </li>
+          <li class="insight-item">
+            78% dos alunos que erraram a questão sobre alvéolos acertaram após
+            revisar o desafio com imagem.
+          </li>
+        </ul>
+        <p class="panel__uso-pedagogico" id="uso-pedagogico">
+          Sugestão: reforçar "trocas gasosas nos alvéolos" com mais atividades
+          em formato de imagem.
+        </p>
+      </section>
+    </main>
 
-</body>
+    <script src="assets/js/global/global.js"></script>
+    <script src="assets/js/global/data.js"></script>
+    <script src="assets/js/pages/professor/acompanhamento.js"></script>
+  </body>
 </html>
