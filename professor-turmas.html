@@ -1,113 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Adapt AI — Minhas Turmas</title>
-</head>
-<body class="page page-professor page-turmas">
-
-  <header class="app-header">
-    <div class="app-header__brand">
-      <span class="app-header__logo">Adapt AI</span>
-    </div>
-    <nav class="app-header__nav">
-      <a href="professor-turmas.html" class="app-header__nav-item is-active">Turmas</a>
-      <a href="professor-criar-atividade.html" class="app-header__nav-item">Criar atividade</a>
-      <a href="professor-acompanhamento.html" class="app-header__nav-item">Acompanhamento</a>
-    </nav>
-    <div class="app-header__user">
-      <button type="button" class="icon-button icon-button--notifications" aria-label="Notificações"></button>
-      <div class="user-badge">
-        <span class="user-badge__name">Prof. Camila Nogueira</span>
-        <span class="user-badge__role">Ciências</span>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adapt AI — Minhas Turmas</title>
+  </head>
+  <body class="page page-professor page-turmas">
+    <header class="app-header">
+      <div class="app-header__brand">
+        <span class="app-header__logo">Adapt AI</span>
       </div>
-    </div>
-  </header>
-
-  <main class="page-content">
-
-    <div class="page-title-row">
-      <div>
-        <h1 class="page-title">Minhas turmas</h1>
-        <p class="page-subtitle">Acompanhe o andamento de cada turma e crie novas atividades.</p>
+      <nav class="app-header__nav">
+        <a href="professor-turmas.html" class="app-header__nav-item is-active"
+          >Turmas</a
+        >
+        <a href="professor-criar-atividade.html" class="app-header__nav-item"
+          >Criar atividade</a
+        >
+        <a href="professor-acompanhamento.html" class="app-header__nav-item"
+          >Acompanhamento</a
+        >
+      </nav>
+      <div class="app-header__user">
+        <button
+          type="button"
+          class="icon-button icon-button--notifications"
+          aria-label="Notificações"
+        ></button>
+        <div class="user-badge">
+          <span class="user-badge__name">Prof. Camila Nogueira</span>
+          <span class="user-badge__role">Ciências</span>
+        </div>
       </div>
-      <a href="professor-criar-atividade.html" class="button button--primary">Criar atividade</a>
-    </div>
+    </header>
 
-    <section class="turma-grid" aria-label="Lista de turmas">
+    <main class="page-content">
+      <div class="page-title-row">
+        <div>
+          <h1 class="page-title">Minhas turmas</h1>
+          <p class="page-subtitle">
+            Acompanhe o andamento de cada turma e crie novas atividades.
+          </p>
+        </div>
+        <a href="professor-criar-atividade.html" class="button button--primary"
+          >Criar atividade</a
+        >
+      </div>
 
-      <article class="turma-card" data-turma-id="7a">
-        <header class="turma-card__header">
-          <h2 class="turma-card__nome">7º Ano A</h2>
-          <span class="tag tag--disciplina">Ciências</span>
-        </header>
-        <p class="turma-card__ultima-atividade">Última atividade: <strong>Sistema Digestório</strong></p>
-        <dl class="turma-card__stats">
-          <div class="stat">
-            <dt>Alunos</dt>
-            <dd>28</dd>
-          </div>
-          <div class="stat">
-            <dt>Atividades ativas</dt>
-            <dd>2</dd>
-          </div>
-          <div class="stat">
-            <dt>Desempenho médio</dt>
-            <dd>74%</dd>
-          </div>
-        </dl>
-        <a href="professor-acompanhamento.html?turma=7a" class="turma-card__link">Ver acompanhamento</a>
-      </article>
+      <section class="turma-grid" aria-label="Lista de turmas">
+        <article class="turma-card" data-turma-id="7a">
+          <header class="turma-card__header">
+            <h2 class="turma-card__nome" data-field="nome">7º Ano A</h2>
+            <span class="tag tag--disciplina" data-field="disciplina"
+              >Ciências</span
+            >
+          </header>
+          <p class="turma-card__ultima-atividade">
+            Última atividade:
+            <strong data-field="atividadeAtual">Sistema Digestório</strong>
+          </p>
+          <dl class="turma-card__stats">
+            <div class="stat">
+              <dt>Alunos</dt>
+              <dd data-field="alunos">28</dd>
+            </div>
+            <div class="stat">
+              <dt>Atividades ativas</dt>
+              <dd data-field="atividadesAtivas">2</dd>
+            </div>
+            <div class="stat">
+              <dt>Desempenho médio</dt>
+              <dd data-field="desempenhoMedio">74%</dd>
+            </div>
+          </dl>
+          <a
+            href="professor-acompanhamento.html?turma=7a"
+            class="turma-card__link"
+            >Ver acompanhamento</a
+          >
+        </article>
 
-      <article class="turma-card" data-turma-id="8b">
-        <header class="turma-card__header">
-          <h2 class="turma-card__nome">8º Ano B</h2>
-          <span class="tag tag--disciplina">Ciências</span>
-        </header>
-        <p class="turma-card__ultima-atividade">Última atividade: <strong>Sistema Respiratório</strong></p>
-        <dl class="turma-card__stats">
-          <div class="stat">
-            <dt>Alunos</dt>
-            <dd>31</dd>
-          </div>
-          <div class="stat">
-            <dt>Atividades ativas</dt>
-            <dd>1</dd>
-          </div>
-          <div class="stat">
-            <dt>Desempenho médio</dt>
-            <dd>68%</dd>
-          </div>
-        </dl>
-        <a href="professor-acompanhamento.html?turma=8b" class="turma-card__link">Ver acompanhamento</a>
-      </article>
+        <article class="turma-card" data-turma-id="8b">
+          <header class="turma-card__header">
+            <h2 class="turma-card__nome" data-field="nome">8º Ano B</h2>
+            <span class="tag tag--disciplina" data-field="disciplina"
+              >Ciências</span
+            >
+          </header>
+          <p class="turma-card__ultima-atividade">
+            Última atividade:
+            <strong data-field="atividadeAtual">Sistema Respiratório</strong>
+          </p>
+          <dl class="turma-card__stats">
+            <div class="stat">
+              <dt>Alunos</dt>
+              <dd data-field="alunos">31</dd>
+            </div>
+            <div class="stat">
+              <dt>Atividades ativas</dt>
+              <dd data-field="atividadesAtivas">1</dd>
+            </div>
+            <div class="stat">
+              <dt>Desempenho médio</dt>
+              <dd data-field="desempenhoMedio">68%</dd>
+            </div>
+          </dl>
+          <a
+            href="professor-acompanhamento.html?turma=8b"
+            class="turma-card__link"
+            >Ver acompanhamento</a
+          >
+        </article>
 
-      <article class="turma-card" data-turma-id="9a">
-        <header class="turma-card__header">
-          <h2 class="turma-card__nome">9º Ano A</h2>
-          <span class="tag tag--disciplina">Ciências</span>
-        </header>
-        <p class="turma-card__ultima-atividade">Última atividade: <strong>Genética Básica</strong></p>
-        <dl class="turma-card__stats">
-          <div class="stat">
-            <dt>Alunos</dt>
-            <dd>26</dd>
-          </div>
-          <div class="stat">
-            <dt>Atividades ativas</dt>
-            <dd>3</dd>
-          </div>
-          <div class="stat">
-            <dt>Desempenho médio</dt>
-            <dd>81%</dd>
-          </div>
-        </dl>
-        <a href="professor-acompanhamento.html?turma=9a" class="turma-card__link">Ver acompanhamento</a>
-      </article>
+        <article class="turma-card" data-turma-id="9a">
+          <header class="turma-card__header">
+            <h2 class="turma-card__nome" data-field="nome">9º Ano A</h2>
+            <span class="tag tag--disciplina" data-field="disciplina"
+              >Ciências</span
+            >
+          </header>
+          <p class="turma-card__ultima-atividade">
+            Última atividade:
+            <strong data-field="atividadeAtual">Genética Básica</strong>
+          </p>
+          <dl class="turma-card__stats">
+            <div class="stat">
+              <dt>Alunos</dt>
+              <dd data-field="alunos">26</dd>
+            </div>
+            <div class="stat">
+              <dt>Atividades ativas</dt>
+              <dd data-field="atividadesAtivas">3</dd>
+            </div>
+            <div class="stat">
+              <dt>Desempenho médio</dt>
+              <dd data-field="desempenhoMedio">81%</dd>
+            </div>
+          </dl>
+          <a
+            href="professor-acompanhamento.html?turma=9a"
+            class="turma-card__link"
+            >Ver acompanhamento</a
+          >
+        </article>
+      </section>
+    </main>
 
-    </section>
-
-  </main>
-
-</body>
+    <script src="assets/js/global/global.js"></script>
+    <script src="assets/js/global/data.js"></script>
+    <script src="assets/js/pages/professor/turmas.js"></script>
+  </body>
 </html>
