@@ -79,3 +79,58 @@ window.AdaptAI = window.AdaptAI || {};
   };
 
 })(window.AdaptAI);
+
+// Inicialização do Menu Hambúrguer do Professor (Responsivo)
+document.addEventListener('DOMContentLoaded', function () {
+  const btnHamburguer = document.getElementById('btn-hamburguer');
+  const btnFechar = document.getElementById('btn-fechar-sidebar');
+  const sidebar = document.getElementById('sidebar-professor');
+  const backdrop = document.getElementById('sidebar-backdrop');
+
+  if (!btnHamburguer || !sidebar) return;
+
+  function abrirMenu() {
+    sidebar.classList.add('is-open');
+    if (backdrop) backdrop.classList.add('is-open');
+    btnHamburguer.classList.add('is-active');
+    btnHamburguer.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function fecharMenu() {
+    sidebar.classList.remove('is-open');
+    if (backdrop) backdrop.classList.remove('is-open');
+    btnHamburguer.classList.remove('is-active');
+    btnHamburguer.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  btnHamburguer.addEventListener('click', function () {
+    if (sidebar.classList.contains('is-open')) {
+      fecharMenu();
+    } else {
+      abrirMenu();
+    }
+  });
+
+  if (btnFechar) {
+    btnFechar.addEventListener('click', fecharMenu);
+  }
+
+  if (backdrop) {
+    backdrop.addEventListener('click', fecharMenu);
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
+      fecharMenu();
+    }
+  });
+
+  // Fecha o menu ao clicar em qualquer item da navegação
+  const navLinks = sidebar.querySelectorAll('.sidebar-professor__nav-item');
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', fecharMenu);
+  });
+});
+

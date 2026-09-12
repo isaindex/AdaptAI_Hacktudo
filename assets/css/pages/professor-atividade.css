@@ -1,0 +1,283 @@
+/* ==========================================================================
+   Adapt AI — Estilos do Professor: Criar Atividade com IA
+   ========================================================================== */
+
+@import url("./professor-turmas.css");
+
+/* Indicador de Etapas */
+.step-indicator {
+  display: flex;
+  gap: 16px;
+  margin: 0 0 28px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step-indicator__item {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  background-color: var(--branco);
+  border: 1px solid var(--borda-suave);
+  color: var(--roxo-escuro-40);
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.25s ease;
+  box-shadow: var(--sombra-card);
+}
+
+.step-indicator__num {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: var(--roxo-escuro-10);
+  color: var(--roxo-escuro-40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  transition: all 0.25s ease;
+}
+
+.step-indicator__item.is-active {
+  border-color: var(--roxo-100);
+  background-color: var(--roxo-20);
+  color: var(--roxo-100);
+}
+
+.step-indicator__item.is-active .step-indicator__num {
+  background-color: var(--roxo-100);
+  color: var(--branco);
+}
+
+/* Card do Formulário */
+.form-card {
+  background: var(--branco);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--sombra-card);
+  margin-bottom: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.field label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--roxo-escuro-100);
+}
+
+.field input[type="text"],
+.field select,
+.field textarea {
+  padding: 13px 18px;
+  border: 1.5px solid var(--borda-suave);
+  background-color: var(--bg-input);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--roxo-escuro-100);
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.field input[type="text"]:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--roxo-100);
+  background-color: var(--branco);
+  box-shadow: 0 0 0 3px rgba(146, 69, 247, 0.15);
+}
+
+/* Dropzone de Upload de PDF */
+.upload-dropzone {
+  border: 2px dashed var(--roxo-40);
+  background-color: var(--roxo-10);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.upload-dropzone:hover {
+  border-color: var(--roxo-100);
+  background-color: var(--roxo-20);
+}
+
+.upload-dropzone__icone {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+/* Lista de Arquivos Anexados */
+.anexo-lista {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 16px;
+  list-style: none;
+}
+
+.anexo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background-color: var(--branco);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.anexo-item__nome {
+  font-weight: 700;
+  color: var(--roxo-escuro-100);
+  font-size: 14px;
+}
+
+.anexo-item__tamanho {
+  font-size: 12px;
+  color: var(--roxo-escuro-40);
+  margin-left: 8px;
+}
+
+#botao-remover-pdf {
+  color: var(--laranja-100);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px 8px;
+}
+
+#botao-remover-pdf:hover {
+  text-decoration: underline;
+}
+
+/* Itens de Atividades Geradas */
+.atividade-gerada-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 22px;
+  background-color: var(--branco);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--radius-md);
+  box-shadow: var(--sombra-card);
+  transition: all 0.2s ease;
+}
+
+.atividade-gerada-item:hover {
+  border-color: var(--roxo-40);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-card-hover);
+}
+
+.btn-icone-acao {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-input);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-icone-acao:hover {
+  background-color: var(--roxo-20);
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   Responsividade: Criar Atividade do Professor
+   ========================================================================== */
+@media (max-width: 680px) {
+  .step-indicator {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .step-indicator__item {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .form-card {
+    padding: 20px 16px;
+    margin-bottom: 22px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .upload-dropzone {
+    padding: 24px 16px;
+  }
+
+  #botao-anexar-pdf {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-actions button[data-action="gerar-atividades"] {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .etapa-atividades-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .atividade-gerada-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 14px;
+  }
+
+  .atividade-gerada-item__acoes {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid var(--borda-suave);
+    padding-top: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .anexo-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  #botao-remover-pdf {
+    align-self: flex-end;
+  }
+}

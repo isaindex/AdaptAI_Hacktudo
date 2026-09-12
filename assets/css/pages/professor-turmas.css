@@ -1,0 +1,1027 @@
+/* ==========================================================================
+   Adapt AI — Estilos do Professor: Dashboard, Desafios e Turmas
+   ========================================================================== */
+
+/* Layout Geral do Professor */
+.page-professor {
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.professor-app-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  max-width: 100%;
+}
+
+/* Sidebar Esquerda (Roxa) */
+.sidebar-professor {
+  width: 240px;
+  background-color: var(--roxo-sidebar);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 18px;
+  color: var(--branco);
+  flex-shrink: 0;
+  box-shadow: 4px 0 20px rgba(133, 52, 236, 0.15);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 100;
+}
+
+.sidebar-professor__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px 32px 10px;
+}
+
+.sidebar-professor__logo {
+  height: 40px;
+  width: auto;
+}
+
+.sidebar-professor__brand-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--branco);
+  letter-spacing: -0.5px;
+}
+
+/* Menu de Navegação */
+.sidebar-professor__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.sidebar-professor__nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.sidebar-professor__nav-item img,
+.sidebar-professor__nav-item svg {
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
+  filter: brightness(0) invert(1);
+  transition: all 0.2s ease;
+}
+
+.sidebar-professor__nav-item,
+.sidebar-professor__nav-item:visited,
+.sidebar-professor__nav-item span {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sidebar-professor__nav-item:hover,
+.sidebar-professor__nav-item:hover span {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--branco);
+  transform: translateX(3px);
+}
+
+/* Item Ativo (Destaque selecionado com letra e ícone 100% brancos) */
+.sidebar-professor__nav-item.is-active,
+.sidebar-professor__nav-item.is-active:visited,
+.sidebar-professor__nav-item.is-active span {
+  background-color: var(--verde-100);
+  color: #FFFFFF !important;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(143, 211, 26, 0.35);
+}
+
+.sidebar-professor__nav-item.is-active img,
+.sidebar-professor__nav-item.is-active svg {
+  filter: brightness(0) invert(1) !important;
+  opacity: 1 !important;
+}
+
+/* Badge de Notificação */
+.sidebar-professor__badge {
+  position: absolute;
+  right: 14px;
+  background-color: var(--laranja-100);
+  color: var(--branco);
+  font-size: 11px;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Perfil do Professor no Rodapé da Sidebar */
+.sidebar-professor__user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 8px 0 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-professor__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background-color: var(--verde-100);
+  color: var(--roxo-escuro-100);
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar-professor__user-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-professor__user-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--branco);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sidebar-professor__user-role {
+  font-size: 12px;
+  color: var(--roxo-40);
+  white-space: nowrap;
+}
+
+/* Área Principal de Conteúdo (Centro) */
+.main-conteudo-professor {
+  flex: 1;
+  min-width: 0;
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.professor-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.professor-page-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--roxo-escuro-100);
+  line-height: 1.2;
+}
+
+.btn-nova-atividade {
+  background-color: var(--roxo-100);
+  color: var(--branco);
+  font-size: 15px;
+  font-weight: 800;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 16px rgba(146, 69, 247, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-nova-atividade:hover {
+  background-color: var(--roxo-sidebar);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(146, 69, 247, 0.4);
+}
+
+/* Grid de Cards de Atividades / Desafios */
+.desafios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1050px) {
+  .desafios-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card Individual de Desafio */
+.card-desafio-docente {
+  background: var(--branco);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--sombra-card);
+  transition: all 0.25s ease;
+  min-height: 180px;
+}
+
+.card-desafio-docente:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-card-hover);
+  border-color: var(--roxo-40);
+}
+
+.card-desafio-docente__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-desafio-docente__turma {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--roxo-100);
+}
+
+.card-desafio-docente__tempo {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--roxo-escuro-40);
+}
+
+.card-desafio-docente__titulo {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--roxo-escuro-100);
+  margin-bottom: 8px;
+}
+
+.card-desafio-docente__descricao {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--roxo-escuro-60);
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+.card-desafio-docente__rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.card-desafio-docente__tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag-card-docente {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+}
+
+.tag-card-docente--laranja {
+  background-color: var(--laranja-10);
+  color: var(--laranja-100);
+  border: 1px solid var(--laranja-20);
+}
+
+.tag-card-docente--roxo {
+  background-color: var(--roxo-10);
+  color: var(--roxo-100);
+  border: 1px solid var(--roxo-40);
+}
+
+.card-desafio-docente__autor {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--roxo-escuro-40);
+}
+
+/* Painel Lateral Direito (Agenda + Banner Mascote) */
+.painel-lateral-direito {
+  width: 320px;
+  padding: 36px 30px 36px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+/* Card Agenda da Semana */
+.card-agenda-semana {
+  background: var(--branco);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--sombra-card);
+}
+
+.card-agenda-semana__titulo {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--roxo-escuro-100);
+  margin-bottom: 16px;
+}
+
+/* Seletor de Dias da Semana */
+.agenda-dias-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.agenda-dia-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 6px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 44px;
+}
+
+.agenda-dia-item__nome {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--roxo-escuro-40);
+}
+
+.agenda-dia-item__numero {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--roxo-escuro-100);
+}
+
+.agenda-dia-item:hover {
+  background-color: var(--roxo-10);
+}
+
+.agenda-dia-item.is-active {
+  background-color: var(--roxo-100);
+  box-shadow: 0 4px 12px rgba(146, 69, 247, 0.35);
+}
+
+.agenda-dia-item.is-active .agenda-dia-item__nome,
+.agenda-dia-item.is-active .agenda-dia-item__numero {
+  color: var(--branco);
+}
+
+/* Subtítulo Desafios da Semana */
+.agenda-desafios-subtitulo {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--roxo-escuro-100);
+  margin-bottom: 14px;
+}
+
+.agenda-turmas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.agenda-turma-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.agenda-turma-item__nome {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--roxo-100);
+}
+
+.agenda-turma-item__desc {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--roxo-escuro-60);
+  line-height: 1.35;
+}
+
+/* Banner Informativo com Mascote */
+.card-mascote-desafios {
+  position: relative;
+  background: linear-gradient(135deg, #9245F7 0%, #7A28E5 100%);
+  border-radius: var(--radius-xl);
+  padding: 26px 22px;
+  color: var(--branco);
+  box-shadow: var(--sombra-card-roxa);
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 140px;
+}
+
+.card-mascote-desafios__conteudo {
+  max-width: 60%;
+}
+
+.card-mascote-desafios__titulo {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--branco);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.card-mascote-desafios__texto {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--roxo-40);
+  line-height: 1.35;
+}
+
+.card-mascote-desafios__img {
+  position: absolute;
+  right: 10px;
+  bottom: -4px;
+  width: 105px;
+  height: auto;
+  filter: drop-shadow(0 6px 12px rgba(27, 7, 53, 0.3));
+}
+
+/* Compatibilidade com cabeçalho clássico caso usado sem a sidebar */
+.app-header {
+  background-color: var(--branco);
+  border-bottom: 1px solid var(--borda-suave);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header__brand {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--roxo-100);
+}
+
+.app-header__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.app-header__nav-item {
+  color: var(--roxo-escuro-60);
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.app-header__nav-item.is-active,
+.app-header__nav-item:hover {
+  color: var(--roxo-100);
+  background-color: var(--roxo-10);
+}
+
+.turma-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.turma-card {
+  background: var(--branco);
+  border: 1px solid var(--borda-suave);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--sombra-card);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.turma-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-card-hover);
+  border-color: var(--roxo-40);
+}
+
+.turma-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.turma-card__nome {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--roxo-escuro-100);
+}
+
+.turma-card__ultima-atividade {
+  font-size: 14px;
+  color: var(--roxo-escuro-60);
+  margin-bottom: 18px;
+}
+
+.turma-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--borda-suave);
+  border-bottom: 1px solid var(--borda-suave);
+  margin-bottom: 18px;
+}
+
+.turma-card__stats .stat dt {
+  font-size: 12px;
+  color: var(--roxo-escuro-40);
+  font-weight: 600;
+}
+
+.turma-card__stats .stat dd {
+  font-size: 18px;
+  color: var(--roxo-100);
+  font-weight: 800;
+}
+
+.turma-card__link {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--roxo-100);
+  text-align: center;
+  padding: 8px 16px;
+  background-color: var(--roxo-20);
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.turma-card__link:hover {
+  background-color: var(--roxo-100);
+  color: var(--branco);
+}
+
+/* ==========================================================================
+   Responsividade: Laptops (993px - 1200px)
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .sidebar-professor {
+    width: 210px;
+    padding: 24px 14px;
+  }
+
+  .sidebar-professor__brand {
+    padding: 0 6px 24px 6px;
+  }
+
+  .sidebar-professor__nav-item {
+    font-size: 14px;
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .main-conteudo-professor {
+    padding: 28px 24px;
+  }
+
+  .painel-lateral-direito {
+    width: 290px;
+    padding: 28px 20px 28px 0;
+  }
+}
+
+/* ==========================================================================
+   Header Mobile & Menu Hambúrguer (Professor)
+   ========================================================================== */
+.professor-mobile-header {
+  display: none;
+}
+
+.btn-fechar-sidebar {
+  display: none;
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
+/* ==========================================================================
+   Responsividade: Tablets e Telas Médias (<= 992px)
+   Menu Hambúrguer com Drawer Lateral Deslizante
+   ========================================================================== */
+@media (max-width: 992px) {
+  /* Barra Superior Fixa Mobile */
+  .professor-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--roxo-sidebar);
+    padding: 10px 18px;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 16px rgba(27, 7, 53, 0.18);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .btn-hamburguer {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.12);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .btn-hamburguer:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  .hamburguer-icon,
+  .hamburguer-icon::before,
+  .hamburguer-icon::after {
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background-color: var(--branco);
+    border-radius: 2px;
+    transition: all 0.25s ease;
+  }
+
+  .hamburguer-icon {
+    position: relative;
+  }
+
+  .hamburguer-icon::before,
+  .hamburguer-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .hamburguer-icon::before {
+    top: -7px;
+  }
+
+  .hamburguer-icon::after {
+    bottom: -7px;
+  }
+
+  .btn-hamburguer.is-active .hamburguer-icon {
+    background-color: transparent;
+  }
+
+  .btn-hamburguer.is-active .hamburguer-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .btn-hamburguer.is-active .hamburguer-icon::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mobile-header__logo {
+    height: 32px;
+    width: auto;
+  }
+
+  .mobile-header__brand-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--branco);
+    letter-spacing: -0.5px;
+  }
+
+  .mobile-header__user .sidebar-professor__avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+
+  /* Backdrop com Blur */
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(27, 7, 53, 0.55);
+    backdrop-filter: blur(4px);
+    z-index: 1999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .sidebar-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Sidebar Lateral Off-Canvas deslizante */
+  .sidebar-professor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    max-width: 85vw;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 2000;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 6px 0 30px rgba(0, 0, 0, 0.35);
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between;
+    padding: 24px 18px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+
+  .sidebar-professor.is-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-professor__brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px 24px 4px;
+  }
+
+  .btn-fechar-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--branco);
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn-fechar-sidebar:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+  }
+
+  .sidebar-professor__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .sidebar-professor__nav-item {
+    font-size: 15px;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+  }
+
+  .sidebar-professor__user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 8px 0 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .sidebar-professor__user-role {
+    display: block;
+    font-size: 12px;
+    color: var(--roxo-40);
+  }
+
+  .sidebar-professor__user-name {
+    display: block;
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  /* Layout principal passa a ocupar 100% da largura abaixo da topbar */
+  .professor-app-layout {
+    flex-direction: column;
+    min-height: calc(100vh - 60px);
+  }
+
+  .main-conteudo-professor {
+    padding: 24px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Painel lateral direito passa a ser exibido abaixo do grid principal em 2 colunas */
+  .painel-lateral-direito {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px 36px 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ==========================================================================
+   Responsividade: Dispositivos Móveis (<= 640px)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .main-conteudo-professor {
+    padding: 18px 14px;
+  }
+
+  .professor-header-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .professor-page-title {
+    font-size: 24px;
+  }
+
+  .btn-nova-atividade {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 18px;
+  }
+
+  .desafios-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .card-desafio-docente {
+    padding: 18px 16px;
+    min-height: auto;
+  }
+
+  .card-desafio-docente__titulo {
+    font-size: 17px;
+  }
+
+  .turma-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .turma-card {
+    padding: 18px 16px;
+  }
+
+  .turma-card__nome {
+    font-size: 18px;
+  }
+
+  .turma-card__stats {
+    gap: 6px;
+    padding: 10px 0;
+  }
+
+  .turma-card__stats .stat dt {
+    font-size: 11px;
+  }
+
+  .turma-card__stats .stat dd {
+    font-size: 16px;
+  }
+
+  .turma-card__link {
+    display: block;
+    padding: 10px 16px;
+  }
+
+  .painel-lateral-direito {
+    grid-template-columns: 1fr;
+    padding: 0 14px 28px 14px;
+    gap: 16px;
+  }
+
+  .card-agenda-semana {
+    padding: 18px 16px;
+  }
+
+  .agenda-dias-row {
+    gap: 4px;
+    margin-bottom: 18px;
+  }
+
+  .agenda-dia-item {
+    min-width: 38px;
+    padding: 6px 2px;
+  }
+
+  .agenda-dia-item__numero {
+    font-size: 15px;
+  }
+
+  .card-mascote-desafios {
+    padding: 20px 16px;
+  }
+
+  .card-mascote-desafios__conteudo {
+    max-width: 68%;
+  }
+
+  .card-mascote-desafios__titulo {
+    font-size: 17px;
+  }
+
+  .card-mascote-desafios__texto {
+    font-size: 12px;
+  }
+
+  .card-mascote-desafios__img {
+    width: 80px;
+    right: 8px;
+    bottom: -4px;
+  }
+}
+
+/* ==========================================================================
+   Responsividade: Smartphones Pequenos (<= 380px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .sidebar-professor {
+    padding: 8px 10px;
+  }
+
+  .sidebar-professor__nav-item {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .professor-page-title {
+    font-size: 22px;
+  }
+
+  .turma-card__stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    text-align: left;
+  }
+
+  .turma-card__stats .stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .agenda-dia-item {
+    min-width: 32px;
+  }
+}

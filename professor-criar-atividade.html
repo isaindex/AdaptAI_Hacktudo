@@ -2,327 +2,327 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Adapt AI — Criar Atividade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adapt AI — Criar Atividade com IA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/pages/professor-atividade.css">
   </head>
   <body class="page page-professor page-criar-atividade">
-    <header class="app-header">
-      <div class="app-header__brand">
-        <span class="app-header__logo">Adapt AI</span>
+    <!-- Header Mobile com Menu Hambúrguer -->
+    <header class="professor-mobile-header">
+      <button type="button" class="btn-hamburguer" id="btn-hamburguer" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburguer-icon"></span>
+      </button>
+      <div class="mobile-header__brand">
+        <img src="assets/images/logo-branca.svg" alt="Adapt IA" class="mobile-header__logo">
+        <span class="mobile-header__brand-title">adapt IA</span>
       </div>
-      <nav class="app-header__nav">
-        <a href="professor-turmas.html" class="app-header__nav-item">Turmas</a>
-        <a
-          href="professor-criar-atividade.html"
-          class="app-header__nav-item is-active"
-          >Criar atividade</a
-        >
-        <a href="professor-acompanhamento.html" class="app-header__nav-item"
-          >Acompanhamento</a
-        >
-      </nav>
-      <div class="app-header__user">
-        <button
-          type="button"
-          class="icon-button icon-button--notifications"
-          aria-label="Notificações"
-        ></button>
-        <div class="user-badge">
-          <span class="user-badge__name">Prof. Camila Nogueira</span>
-          <span class="user-badge__role">Ciências</span>
-        </div>
+      <div class="mobile-header__user">
+        <div class="sidebar-professor__avatar">S</div>
       </div>
     </header>
 
-    <main class="page-content">
-      <div class="page-title-row">
+    <!-- Backdrop escuro para fechar ao clicar fora -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <div class="professor-app-layout">
+      <!-- Sidebar Esquerda -->
+      <aside class="sidebar-professor" id="sidebar-professor">
         <div>
-          <h1 class="page-title">Criar atividade</h1>
-          <p class="page-subtitle">
-            Transforme o material da aula em desafios e quiz com IA.
-          </p>
+          <div class="sidebar-professor__brand">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <img src="assets/images/logo-branca.svg" alt="Adapt IA" class="sidebar-professor__logo">
+              <span class="sidebar-professor__brand-title">adapt IA</span>
+            </div>
+            <button type="button" class="btn-fechar-sidebar" id="btn-fechar-sidebar" aria-label="Fechar menu">&times;</button>
+          </div>
+
+          <nav class="sidebar-professor__nav">
+            <a href="professor-acompanhamento.html" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/layout-dashboard.svg" alt="" aria-hidden="true">
+              <span>Dashboard</span>
+            </a>
+            <a href="professor-turmas.html" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/users.svg" alt="" aria-hidden="true">
+              <span>Turmas</span>
+            </a>
+            <a href="professor-desafios.html" class="sidebar-professor__nav-item is-active">
+              <img src="assets/images/icon/menu-desk/book-open.svg" alt="" aria-hidden="true">
+              <span>Desafios</span>
+            </a>
+            <a href="#" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/calendar-check.svg" alt="" aria-hidden="true">
+              <span>Frequência</span>
+            </a>
+            <a href="#" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/message-square.svg" alt="" aria-hidden="true">
+              <span>Comunicação</span>
+              <span class="sidebar-professor__badge">8</span>
+            </a>
+            <a href="#" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/settings.svg" alt="" aria-hidden="true">
+              <span>Configurações</span>
+            </a>
+          </nav>
         </div>
-      </div>
 
-      <ol class="step-indicator" aria-label="Etapas da criação">
-        <li class="step-indicator__item is-active" data-step="1">
-          Conteúdo da aula
-        </li>
-        <li class="step-indicator__item" data-step="2">
-          Revisar atividades geradas
-        </li>
-      </ol>
-
-      <!-- ETAPA 1: dados da aula e material -->
-      <section
-        class="panel panel--form"
-        id="etapa-conteudo"
-        aria-labelledby="etapa-conteudo-titulo"
-      >
-        <h2 id="etapa-conteudo-titulo" class="panel__titulo">
-          Conteúdo da aula
-        </h2>
-
-        <form class="form-aula" id="form-aula">
-          <div class="field">
-            <label for="titulo-aula">Título da aula</label>
-            <input
-              type="text"
-              id="titulo-aula"
-              name="titulo-aula"
-              value="Sistema Respiratório"
-            />
+        <!-- Rodapé do Usuário -->
+        <div class="sidebar-professor__user">
+          <div class="sidebar-professor__avatar">S</div>
+          <div class="sidebar-professor__user-info">
+            <span class="sidebar-professor__user-name">Carla Ramos</span>
+            <span class="sidebar-professor__user-role">Professor de Biologia</span>
           </div>
+        </div>
+      </aside>
 
-          <div class="field-row">
-            <div class="field">
-              <label for="disciplina">Disciplina</label>
-              <select id="disciplina" name="disciplina">
-                <option>Ciências</option>
-                <option>Matemática</option>
-                <option>Português</option>
-                <option>História</option>
-                <option>Geografia</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="turma">Turma</label>
-              <select id="turma" name="turma">
-                <option value="7a">7º Ano A</option>
-                <option value="8b" selected>8º Ano B</option>
-                <option value="9a">9º Ano A</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="field field--material">
-            <label id="material-label">Material (PDF)</label>
-            <div
-              class="anexo-upload"
-              id="anexo-upload"
-              aria-labelledby="material-label"
-            >
-              <input
-                type="file"
-                id="material-pdf"
-                name="material-pdf"
-                accept="application/pdf"
-                hidden
-              />
-              <button
-                type="button"
-                class="button button--secundario"
-                id="botao-anexar-pdf"
-              >
-                Adicionar PDF
-              </button>
-              <p class="anexo-upload__vazio" id="anexo-vazio">
-                Nenhum arquivo selecionado.
-              </p>
-              <ul class="anexo-lista" id="anexo-lista" hidden></ul>
-            </div>
-            <p class="field__hint">
-              Selecione um arquivo PDF do computador com o conteúdo da aula.
+      <!-- Conteúdo Principal -->
+      <main class="main-conteudo-professor">
+        <div class="professor-header-row">
+          <div>
+            <h1 class="professor-page-title">Criar Atividade com IA</h1>
+            <p style="color:var(--roxo-escuro-60); font-weight:600; margin-top:4px;">
+              Transforme o material da aula em desafios gamificados e questionários adaptativos.
             </p>
           </div>
+          <a href="professor-desafios.html" class="button button--secondary">
+            <span>Voltar aos Desafios</span>
+          </a>
+        </div>
 
-          <div class="field">
-            <label for="objetivo"
-              >Objetivo da aula
-              <span class="field__optional">(opcional)</span></label
-            >
-            <input
-              type="text"
-              id="objetivo"
-              name="objetivo"
-              placeholder="Ex.: garantir que os alunos entendam o caminho do ar até os alvéolos"
-            />
+        <!-- Indicador de Etapas -->
+        <ol class="step-indicator" aria-label="Etapas da criação">
+          <li class="step-indicator__item is-active" data-step="1">
+            <span class="step-indicator__num">1</span>
+            <span>Conteúdo da aula</span>
+          </li>
+          <li class="step-indicator__item" data-step="2">
+            <span class="step-indicator__num">2</span>
+            <span>Revisar atividades geradas</span>
+          </li>
+        </ol>
+
+        <!-- ETAPA 1: Dados da aula e upload de material -->
+        <section class="form-card" id="etapa-conteudo" aria-labelledby="etapa-conteudo-titulo">
+          <h2 id="etapa-conteudo-titulo" class="panel__titulo" style="font-size:20px; margin-bottom:18px;">
+            Dados da aula e material didático
+          </h2>
+
+          <form class="form-aula" id="form-aula">
+            <div class="field">
+              <label for="titulo-aula">Título da aula</label>
+              <input
+                type="text"
+                id="titulo-aula"
+                name="titulo-aula"
+                value="Sistema Respiratório"
+                placeholder="Ex.: Sistema Respiratório"
+                required
+              />
+            </div>
+
+            <div class="field-row" style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+              <div class="field">
+                <label for="disciplina">Disciplina</label>
+                <select id="disciplina" name="disciplina">
+                  <option selected>Ciências</option>
+                  <option>Biologia</option>
+                  <option>Matemática</option>
+                  <option>Português</option>
+                  <option>História</option>
+                  <option>Geografia</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="turma">Turma de destino</label>
+                <select id="turma" name="turma">
+                  <option value="7a">7º Ano A</option>
+                  <option value="8b" selected>8º Ano B</option>
+                  <option value="9a">9º Ano A</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Upload de PDF -->
+            <div class="field field--material">
+              <label id="material-label">Material da aula (PDF)</label>
+              <div class="upload-dropzone" id="anexo-upload" aria-labelledby="material-label">
+                <input
+                  type="file"
+                  id="material-pdf"
+                  name="material-pdf"
+                  accept="application/pdf"
+                  hidden
+                />
+                <div class="upload-dropzone__icone">📄</div>
+                <button
+                  type="button"
+                  class="button button--secondary"
+                  id="botao-anexar-pdf"
+                >
+                  Selecionar PDF da Aula
+                </button>
+                <p class="anexo-upload__vazio" id="anexo-vazio" style="font-size:13px; color:var(--roxo-escuro-40); margin-top:8px;">
+                  Arraste ou clique para adicionar o arquivo PDF com o conteúdo da aula.
+                </p>
+                <ul class="anexo-lista" id="anexo-lista" hidden></ul>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="objetivo">
+                Objetivo pedagógico da aula
+                <span style="font-weight:400; color:var(--roxo-escuro-40);">(opcional)</span>
+              </label>
+              <input
+                type="text"
+                id="objetivo"
+                name="objetivo"
+                placeholder="Ex.: Garantir que os alunos compreendam as trocas gasosas nos alvéolos pulmonares"
+              />
+            </div>
+
+            <div class="form-actions" style="margin-top:20px;">
+              <button
+                type="submit"
+                class="button button--primary"
+                data-action="gerar-atividades"
+                style="padding:14px 28px; font-size:16px;"
+              >
+                ✨ Gerar atividades com IA
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ETAPA 2: Atividades geradas pela IA (reveladas após geração) -->
+        <section
+          class="form-card"
+          id="etapa-atividades-geradas"
+          aria-labelledby="etapa-atividades-titulo"
+          hidden
+        >
+          <div class="etapa-atividades-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom:1px solid var(--borda-suave); padding-bottom:16px;">
+            <div>
+              <h2 id="etapa-atividades-titulo" class="panel__titulo" style="font-size:22px;">
+                Atividades Geradas pela IA
+              </h2>
+              <p class="panel__status" style="font-size:14px; color:var(--roxo-100); font-weight:700;">
+                ✓ Conteúdo analisado com sucesso: 3 desafios e 1 quiz adaptativo gerados.
+              </p>
+            </div>
+            <span class="tag tag--green">Pronto para Revisão</span>
           </div>
 
-          <div class="form-aula__acoes">
+          <ul class="atividades-geradas-lista" style="display:flex; flex-direction:column; gap:16px;">
+            <!-- Atividade 1 -->
+            <li class="atividade-gerada-item" data-atividade-id="1">
+              <div class="atividade-gerada-item__conteudo">
+                <div style="display:flex; gap:8px; margin-bottom:6px;">
+                  <span class="tag tag--purple">Texto</span>
+                  <span class="tag tag--green">Fácil</span>
+                </div>
+                <h3 style="font-size:17px; font-weight:800; color:var(--roxo-escuro-100); margin-bottom:4px;">
+                  Desafio 01: O caminho do ar
+                </h3>
+                <p style="font-size:14px; color:var(--roxo-escuro-60);">
+                  Ordene as estruturas anatômicas por onde o ar passa desde as fossas nasais até os alvéolos.
+                </p>
+              </div>
+              <div class="atividade-gerada-item__acoes">
+                <button type="button" class="btn-icone-acao icon-button--editar" aria-label="Editar">✏️</button>
+                <button type="button" class="btn-icone-acao icon-button--excluir" aria-label="Excluir">🗑️</button>
+              </div>
+            </li>
+
+            <!-- Atividade 2 -->
+            <li class="atividade-gerada-item" data-atividade-id="2">
+              <div class="atividade-gerada-item__conteudo">
+                <div style="display:flex; gap:8px; margin-bottom:6px;">
+                  <span class="tag tag--orange">Imagem</span>
+                  <span class="tag tag--purple">Intermediário</span>
+                </div>
+                <h3 style="font-size:17px; font-weight:800; color:var(--roxo-escuro-100); margin-bottom:4px;">
+                  Desafio 02: Identifique a estrutura
+                </h3>
+                <p style="font-size:14px; color:var(--roxo-escuro-60);">
+                  A partir da ilustração anatômica dos pulmões, indique a estrutura em destaque responsável pela respiração.
+                </p>
+              </div>
+              <div class="atividade-gerada-item__acoes">
+                <button type="button" class="btn-icone-acao icon-button--editar" aria-label="Editar">✏️</button>
+                <button type="button" class="btn-icone-acao icon-button--excluir" aria-label="Excluir">🗑️</button>
+              </div>
+            </li>
+
+            <!-- Atividade 3 -->
+            <li class="atividade-gerada-item" data-atividade-id="3">
+              <div class="atividade-gerada-item__conteudo">
+                <div style="display:flex; gap:8px; margin-bottom:6px;">
+                  <span class="tag tag--purple">Texto</span>
+                  <span class="tag tag--orange">Difícil</span>
+                </div>
+                <h3 style="font-size:17px; font-weight:800; color:var(--roxo-escuro-100); margin-bottom:4px;">
+                  Desafio 03: Troca gasosa nos alvéolos (Hematose)
+                </h3>
+                <p style="font-size:14px; color:var(--roxo-escuro-60);">
+                  Explique como ocorre o processo de difusão de oxigênio e dióxido de carbono nos capilares alveolares.
+                </p>
+              </div>
+              <div class="atividade-gerada-item__acoes">
+                <button type="button" class="btn-icone-acao icon-button--editar" aria-label="Editar">✏️</button>
+                <button type="button" class="btn-icone-acao icon-button--excluir" aria-label="Excluir">🗑️</button>
+              </div>
+            </li>
+
+            <!-- Atividade 4 (Quiz) -->
+            <li class="atividade-gerada-item" data-atividade-id="quiz" style="border-left:4px solid var(--roxo-100);">
+              <div class="atividade-gerada-item__conteudo">
+                <div style="display:flex; gap:8px; margin-bottom:6px;">
+                  <span class="tag tag--purple">Quiz</span>
+                  <span class="tag tag--purple">5 Questões</span>
+                </div>
+                <h3 style="font-size:17px; font-weight:800; color:var(--roxo-escuro-100); margin-bottom:4px;">
+                  Quiz: Sistema Respiratório Completo
+                </h3>
+                <p style="font-size:14px; color:var(--roxo-escuro-60);">
+                  Questões de múltipla escolha cobrindo anatomia, diafragma e trocas gasosas com gabarito adaptativo.
+                </p>
+              </div>
+              <div class="atividade-gerada-item__acoes">
+                <button type="button" class="btn-icone-acao icon-button--editar" aria-label="Editar">✏️</button>
+                <button type="button" class="btn-icone-acao icon-button--excluir" aria-label="Excluir">🗑️</button>
+              </div>
+            </li>
+          </ul>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:28px; padding-top:20px; border-top:1px solid var(--borda-suave);">
             <button
-              type="submit"
-              class="button button--primary"
-              data-action="gerar-atividades"
+              type="button"
+              class="button button--secondary"
+              data-action="voltar-conteudo"
             >
-              Gerar atividades com IA
+              ← Voltar ao conteúdo
+            </button>
+            <button
+              type="button"
+              class="button button--primary"
+              data-action="publicar-turma"
+              style="padding:14px 32px;"
+            >
+              🚀 Publicar para a turma
             </button>
           </div>
-        </form>
-      </section>
-
-      <!-- ETAPA 2: atividades geradas pela IA -->
-      <section
-        class="panel panel--resultado"
-        id="etapa-atividades-geradas"
-        aria-labelledby="etapa-atividades-titulo"
-        hidden
-      >
-        <div class="panel__header">
-          <h2 id="etapa-atividades-titulo" class="panel__titulo">
-            Atividades geradas
-          </h2>
-          <p class="panel__status">
-            Conteúdo analisado. 3 desafios e 1 quiz de 5 questões gerados.
-          </p>
-        </div>
-
-        <ul class="atividade-list">
-          <li class="atividade-item" data-atividade-id="1">
-            <div class="atividade-item__info">
-              <h3 class="atividade-item__titulo">Desafio: o caminho do ar</h3>
-              <p class="atividade-item__descricao">
-                Ordene as estruturas por onde o ar passa até chegar aos
-                alvéolos.
-              </p>
-              <div class="atividade-item__tags">
-                <span class="tag tag--formato">Texto</span>
-                <span class="tag tag--dificuldade tag--dificuldade-facil"
-                  >Fácil</span
-                >
-              </div>
-            </div>
-            <div class="atividade-item__acoes">
-              <button
-                type="button"
-                class="icon-button icon-button--editar"
-                aria-label="Editar atividade"
-              ></button>
-              <button
-                type="button"
-                class="icon-button icon-button--excluir"
-                aria-label="Excluir atividade"
-              ></button>
-            </div>
-          </li>
-
-          <li class="atividade-item" data-atividade-id="2">
-            <div class="atividade-item__info">
-              <h3 class="atividade-item__titulo">
-                Desafio: identifique a estrutura
-              </h3>
-              <p class="atividade-item__descricao">
-                A partir de uma imagem do sistema respiratório, indique o nome
-                da estrutura destacada.
-              </p>
-              <div class="atividade-item__tags">
-                <span class="tag tag--formato">Imagem</span>
-                <span class="tag tag--dificuldade tag--dificuldade-medio"
-                  >Intermediário</span
-                >
-              </div>
-            </div>
-            <div class="atividade-item__acoes">
-              <button
-                type="button"
-                class="icon-button icon-button--editar"
-                aria-label="Editar atividade"
-              ></button>
-              <button
-                type="button"
-                class="icon-button icon-button--excluir"
-                aria-label="Excluir atividade"
-              ></button>
-            </div>
-          </li>
-
-          <li class="atividade-item" data-atividade-id="3">
-            <div class="atividade-item__info">
-              <h3 class="atividade-item__titulo">
-                Desafio: troca gasosa nos alvéolos
-              </h3>
-              <p class="atividade-item__descricao">
-                Explique com suas palavras como ocorre a troca de oxigênio por
-                gás carbônico.
-              </p>
-              <div class="atividade-item__tags">
-                <span class="tag tag--formato">Texto</span>
-                <span class="tag tag--dificuldade tag--dificuldade-dificil"
-                  >Difícil</span
-                >
-              </div>
-            </div>
-            <div class="atividade-item__acoes">
-              <button
-                type="button"
-                class="icon-button icon-button--editar"
-                aria-label="Editar atividade"
-              ></button>
-              <button
-                type="button"
-                class="icon-button icon-button--excluir"
-                aria-label="Excluir atividade"
-              ></button>
-            </div>
-          </li>
-
-          <li
-            class="atividade-item atividade-item--quiz"
-            data-atividade-id="quiz"
-          >
-            <div class="atividade-item__info">
-              <h3 class="atividade-item__titulo">
-                Quiz: Sistema Respiratório (5 questões)
-              </h3>
-              <p class="atividade-item__descricao">
-                Múltipla escolha cobrindo estruturas, funções e trocas gasosas.
-              </p>
-              <div class="atividade-item__tags">
-                <span class="tag tag--formato">Quiz</span>
-                <span class="tag tag--dificuldade tag--dificuldade-medio"
-                  >Intermediário</span
-                >
-              </div>
-              <ol class="quiz-questoes-preview">
-                <li>Qual estrutura filtra o ar antes de entrar nos pulmões?</li>
-                <li>O que acontece nos alvéolos pulmonares?</li>
-                <li>Qual a função do diafragma na respiração?</li>
-                <li>Complete: o ar passa pela laringe antes da ___.</li>
-                <li>
-                  Verdadeiro ou falso: as trocas gasosas ocorrem nos brônquios.
-                </li>
-              </ol>
-            </div>
-            <div class="atividade-item__acoes">
-              <button
-                type="button"
-                class="icon-button icon-button--editar"
-                aria-label="Editar quiz"
-              ></button>
-              <button
-                type="button"
-                class="icon-button icon-button--excluir"
-                aria-label="Excluir quiz"
-              ></button>
-            </div>
-          </li>
-        </ul>
-
-        <div class="panel__acoes">
-          <button
-            type="button"
-            class="button button--secundario"
-            data-action="voltar-conteudo"
-          >
-            Voltar ao conteúdo
-          </button>
-          <button
-            type="button"
-            class="button button--primary"
-            data-action="publicar-turma"
-          >
-            Publicar para a turma
-          </button>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
 
     <script src="assets/js/global/global.js"></script>
     <script src="assets/js/global/data.js"></script>
-    <script src="assets/js/pages/professor/criar-atividade.js"></script>
+    <script src="assets/js/pages/professor/criar_atividade.js"></script>
   </body>
 </html>

@@ -2,150 +2,223 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Adapt AI — Acompanhamento da Turma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adapt AI — Dashboard de Acompanhamento</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/pages/professor-acompanhamento.css">
   </head>
   <body class="page page-professor page-acompanhamento">
-    <header class="app-header">
-      <div class="app-header__brand">
-        <span class="app-header__logo">Adapt AI</span>
+    <!-- Header Mobile com Menu Hambúrguer -->
+    <header class="professor-mobile-header">
+      <button type="button" class="btn-hamburguer" id="btn-hamburguer" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburguer-icon"></span>
+      </button>
+      <div class="mobile-header__brand">
+        <img src="assets/images/logo-branca.svg" alt="Adapt IA" class="mobile-header__logo">
+        <span class="mobile-header__brand-title">adapt IA</span>
       </div>
-      <nav class="app-header__nav">
-        <a href="professor-turmas.html" class="app-header__nav-item">Turmas</a>
-        <a href="professor-criar-atividade.html" class="app-header__nav-item"
-          >Criar atividade</a
-        >
-        <a
-          href="professor-acompanhamento.html"
-          class="app-header__nav-item is-active"
-          >Acompanhamento</a
-        >
-      </nav>
-      <div class="app-header__user">
-        <button
-          type="button"
-          class="icon-button icon-button--notifications"
-          aria-label="Notificações"
-        ></button>
-        <div class="user-badge">
-          <span class="user-badge__name">Prof. Camila Nogueira</span>
-          <span class="user-badge__role">Ciências</span>
-        </div>
+      <div class="mobile-header__user">
+        <div class="sidebar-professor__avatar">S</div>
       </div>
     </header>
 
-    <main class="page-content" id="acompanhamento-conteudo" data-turma-id="8b">
-      <div class="page-title-row">
+    <!-- Backdrop escuro para fechar ao clicar fora -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <div class="professor-app-layout">
+      <!-- Sidebar Esquerda -->
+      <aside class="sidebar-professor" id="sidebar-professor">
         <div>
-          <a href="professor-turmas.html" class="breadcrumb-back">Turmas</a>
-          <h1 class="page-title" id="turma-titulo">
-            8º Ano B — Acompanhamento
-          </h1>
-          <p class="page-subtitle">
-            Atividade atual:
-            <span id="turma-atividade-atual">Sistema Respiratório</span>
-          </p>
+          <div class="sidebar-professor__brand">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <img src="assets/images/logo-branca.svg" alt="Adapt IA" class="sidebar-professor__logo">
+              <span class="sidebar-professor__brand-title">adapt IA</span>
+            </div>
+            <button type="button" class="btn-fechar-sidebar" id="btn-fechar-sidebar" aria-label="Fechar menu">&times;</button>
+          </div>
+
+          <nav class="sidebar-professor__nav">
+            <a href="professor-acompanhamento.html" class="sidebar-professor__nav-item is-active">
+              <img src="assets/images/icon/menu-desk/layout-dashboard.svg" alt="" aria-hidden="true">
+              <span>Dashboard</span>
+            </a>
+            <a href="professor-turmas.html" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/users.svg" alt="" aria-hidden="true">
+              <span>Turmas</span>
+            </a>
+            <a href="professor-desafios.html" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/book-open.svg" alt="" aria-hidden="true">
+              <span>Desafios</span>
+            </a>
+            <a href="#" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/calendar-check.svg" alt="" aria-hidden="true">
+              <span>Frequência</span>
+            </a>
+            <a href="#" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/message-square.svg" alt="" aria-hidden="true">
+              <span>Comunicação</span>
+              <span class="sidebar-professor__badge">8</span>
+            </a>
+            <a href="#" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/settings.svg" alt="" aria-hidden="true">
+              <span>Configurações</span>
+            </a>
+          </nav>
         </div>
 
-        <div class="field field--seletor-turma">
-          <label for="turma-select">Turma</label>
-          <select id="turma-select" name="turma-select">
-            <option value="7a">7º Ano A</option>
-            <option value="8b" selected>8º Ano B</option>
-            <option value="9a">9º Ano A</option>
-          </select>
+        <!-- Rodapé do Usuário -->
+        <div class="sidebar-professor__user">
+          <div class="sidebar-professor__avatar">S</div>
+          <div class="sidebar-professor__user-info">
+            <span class="sidebar-professor__user-name">Carla Ramos</span>
+            <span class="sidebar-professor__user-role">Professor de Biologia</span>
+          </div>
         </div>
-      </div>
+      </aside>
 
-      <!-- Visão geral -->
-      <section
-        class="panel panel--visao-geral"
-        aria-labelledby="visao-geral-titulo"
-      >
-        <h2 id="visao-geral-titulo" class="panel__titulo">Visão geral</h2>
-        <dl class="metric-grid">
-          <div class="metric-card">
-            <dt>Alunos</dt>
-            <dd id="metric-alunos">31</dd>
+      <!-- Conteúdo Principal do Dashboard -->
+      <main class="main-conteudo-professor" id="acompanhamento-conteudo" data-turma-id="8b">
+        <!-- Linha do Cabeçalho com Seletor de Turma -->
+        <div class="professor-header-row">
+          <div>
+            <h1 class="professor-page-title">Dashboard das Turmas</h1>
+            <p style="color:var(--roxo-escuro-60); font-weight:600; margin-top:4px;">
+              Métricas de desempenho, conclusão e engajamento em tempo real.
+            </p>
           </div>
-          <div class="metric-card">
-            <dt>Conclusão</dt>
-            <dd id="metric-conclusao">72%</dd>
+
+          <div class="professor-header-acoes" style="display:flex; align-items:center; gap:16px;">
+            <!-- Seletor de Turma -->
+            <div class="seletor-turma-container">
+              <label for="turma-select" class="seletor-turma-label">Turma selecionada:</label>
+              <select id="turma-select" name="turma-select" class="seletor-turma-select">
+                <option value="7a">7º Ano A (Ciências)</option>
+                <option value="8b" selected>8º Ano B (Ciências)</option>
+                <option value="9a">9º Ano A (Ciências)</option>
+              </select>
+            </div>
+
+            <a href="professor-criar-atividade.html" class="btn-nova-atividade">
+              <span>+ Nova Atividade</span>
+            </a>
           </div>
-          <div class="metric-card">
-            <dt>Desempenho médio</dt>
-            <dd id="metric-desempenho">68%</dd>
+        </div>
+
+        <!-- Banner com Turma Atual e Atividade Ativa -->
+        <div class="dashboard-banner-turma">
+          <div>
+            <span class="tag tag--purple" style="font-size:12px; margin-bottom:6px;">Em andamento</span>
+            <h2 class="dashboard-banner__titulo" id="turma-titulo">8º Ano B — Acompanhamento</h2>
+            <p class="dashboard-banner__subtitulo">
+              Atividade atual: <strong id="turma-atividade-atual" style="color:var(--roxo-100);">Sistema Respiratório</strong>
+            </p>
           </div>
-        </dl>
-      </section>
 
-      <!-- Dificuldades -->
-      <section
-        class="panel panel--dificuldades"
-        aria-labelledby="dificuldades-titulo"
-      >
-        <h2 id="dificuldades-titulo" class="panel__titulo">Dificuldades</h2>
-        <p class="panel__descricao">Conteúdos com maior taxa de erro.</p>
-        <ol class="ranking-list" id="dificuldades-lista">
-          <li class="ranking-item">
-            <span class="ranking-item__nome">Trocas gasosas nos alvéolos</span>
-            <span class="ranking-item__valor">42% de erro</span>
-          </li>
-          <li class="ranking-item">
-            <span class="ranking-item__nome">Nomenclatura das estruturas</span>
-            <span class="ranking-item__valor">31% de erro</span>
-          </li>
-          <li class="ranking-item">
-            <span class="ranking-item__nome">Função do diafragma</span>
-            <span class="ranking-item__valor">18% de erro</span>
-          </li>
-        </ol>
-      </section>
+          <div class="dashboard-banner__status" style="text-align:right;">
+            <span style="font-size:13px; font-weight:600; color:var(--roxo-escuro-40);">Status da turma</span>
+            <div style="font-size:16px; font-weight:800; color:var(--verde-100); display:flex; align-items:center; gap:6px;">
+              <span style="width:8px; height:8px; border-radius:50%; background:var(--verde-100);"></span> Ativa com IA
+            </div>
+          </div>
+        </div>
 
-      <!-- Formatos -->
-      <section class="panel panel--formatos" aria-labelledby="formatos-titulo">
-        <h2 id="formatos-titulo" class="panel__titulo">Formatos</h2>
-        <p class="panel__descricao">
-          Formatos com maior conclusão e engajamento.
-        </p>
-        <ul class="formato-list" id="formatos-lista">
-          <li class="formato-item">
-            <span class="formato-item__nome">Imagem</span>
-            <span class="formato-item__valor">89% de conclusão</span>
-          </li>
-          <li class="formato-item">
-            <span class="formato-item__nome">Quiz</span>
-            <span class="formato-item__valor">76% de conclusão</span>
-          </li>
-          <li class="formato-item">
-            <span class="formato-item__nome">Texto</span>
-            <span class="formato-item__valor">58% de conclusão</span>
-          </li>
-        </ul>
-      </section>
+        <!-- Visão Geral: Grid de Métricas Chave -->
+        <section class="dashboard-metricas-grid" aria-labelledby="visao-geral-titulo">
+          <div class="card-metrica">
+            <div class="card-metrica__icone card-metrica__icone--azul">
+              <img src="assets/images/icon/menu-desk/users.svg" alt="" style="width:22px; filter: invert(48%) sepia(87%) saturate(1914%) hue-rotate(159deg) brightness(97%) contrast(98%);">
+            </div>
+            <div class="card-metrica__dados">
+              <span class="card-metrica__rotulo">Total de Alunos</span>
+              <strong class="card-metrica__numero" id="metric-alunos">31</strong>
+            </div>
+          </div>
 
-      <!-- Insights -->
-      <section class="panel panel--insights" aria-labelledby="insights-titulo">
-        <h2 id="insights-titulo" class="panel__titulo">Insights</h2>
-        <ul class="insight-list" id="insights-lista">
-          <li class="insight-item">
-            Alunos com atividades em imagem concluem 30% mais rápido do que com
-            texto puro nesta turma.
-          </li>
-          <li class="insight-item">
-            78% dos alunos que erraram a questão sobre alvéolos acertaram após
-            revisar o desafio com imagem.
-          </li>
-        </ul>
-        <p class="panel__uso-pedagogico" id="uso-pedagogico">
-          Sugestão: reforçar "trocas gasosas nos alvéolos" com mais atividades
-          em formato de imagem.
-        </p>
-      </section>
-    </main>
+          <div class="card-metrica">
+            <div class="card-metrica__icone card-metrica__icone--verde">
+              <img src="assets/images/icon/menu-desk/calendar-check.svg" alt="" style="width:22px; filter: invert(66%) sepia(85%) saturate(542%) hue-rotate(39deg) brightness(92%) contrast(89%);">
+            </div>
+            <div class="card-metrica__dados">
+              <span class="card-metrica__rotulo">Taxa de Conclusão</span>
+              <strong class="card-metrica__numero" id="metric-conclusao">72%</strong>
+            </div>
+          </div>
+
+          <div class="card-metrica">
+            <div class="card-metrica__icone card-metrica__icone--roxo">
+              <img src="assets/images/icon/menu-desk/book-open.svg" alt="" style="width:22px; filter: invert(41%) sepia(87%) saturate(2891%) hue-rotate(248deg) brightness(96%) contrast(98%);">
+            </div>
+            <div class="card-metrica__dados">
+              <span class="card-metrica__rotulo">Desempenho Médio</span>
+              <strong class="card-metrica__numero" id="metric-desempenho">68%</strong>
+            </div>
+          </div>
+
+          <div class="card-metrica">
+            <div class="card-metrica__icone card-metrica__icone--laranja">
+              <img src="assets/images/icon/menu-mobile/coraccao.svg" alt="" style="width:22px; filter: invert(42%) sepia(88%) saturate(2283%) hue-rotate(345deg) brightness(93%) contrast(97%);">
+            </div>
+            <div class="card-metrica__dados">
+              <span class="card-metrica__rotulo">Formato Líder</span>
+              <strong class="card-metrica__numero" style="font-size:22px;">Visual (89%)</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- Grade Analítica: Dificuldades & Formatos de Aprendizagem -->
+        <div class="dashboard-analitica-grid">
+          <!-- Card de Dificuldades (Taxa de Erro) -->
+          <section class="dashboard-card-secao">
+            <div class="dashboard-card-secao__header">
+              <h2 class="dashboard-card-secao__titulo">Pontos de Atenção (Dificuldades)</h2>
+              <span class="tag tag--orange">Maior taxa de erro</span>
+            </div>
+            <p class="dashboard-card-secao__desc">Conteúdos onde os alunos apresentaram maiores dúvidas.</p>
+            
+            <ol class="dashboard-ranking-lista" id="dificuldades-lista">
+              <!-- Renderizado via JS -->
+            </ol>
+          </section>
+
+          <!-- Card de Formatos de Maior Conclusão -->
+          <section class="dashboard-card-secao">
+            <div class="dashboard-card-secao__header">
+              <h2 class="dashboard-card-secao__titulo">Desempenho por Formato</h2>
+              <span class="tag tag--green">Engajamento</span>
+            </div>
+            <p class="dashboard-card-secao__desc">Adesão dos alunos conforme o formato da atividade.</p>
+
+            <ul class="dashboard-formatos-lista" id="formatos-lista">
+              <!-- Renderizado via JS -->
+            </ul>
+          </section>
+        </div>
+
+        <!-- Seção de Insights Pedagógicos com IA -->
+        <section class="dashboard-card-insights">
+          <div class="dashboard-card-insights__header">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="dashboard-card-insights__badge">IA</div>
+              <h2 class="dashboard-card-insights__titulo">Insights Pedagógicos da Adapt AI</h2>
+            </div>
+            <span class="tag tag--purple">Análise Adaptativa</span>
+          </div>
+
+          <ul class="dashboard-insights-lista" id="insights-lista">
+            <!-- Renderizado via JS -->
+          </ul>
+
+          <div class="dashboard-sugestao-box">
+            <p id="uso-pedagogico" class="dashboard-sugestao-texto">
+              <!-- Renderizado via JS -->
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
 
     <script src="assets/js/global/global.js"></script>
     <script src="assets/js/global/data.js"></script>

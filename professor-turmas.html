@@ -2,6 +2,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adapt AI — Minhas Turmas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,145 +10,169 @@
     <link rel="stylesheet" href="assets/css/all.css">
   </head>
   <body class="page page-professor page-turmas">
-    <header class="app-header">
-      <div class="app-header__brand">
-        <span class="app-header__logo">Adapt AI</span>
+    <!-- Header Mobile com Menu Hambúrguer -->
+    <header class="professor-mobile-header">
+      <button type="button" class="btn-hamburguer" id="btn-hamburguer" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburguer-icon"></span>
+      </button>
+      <div class="mobile-header__brand">
+        <img src="assets/images/logo-branca.svg" alt="Adapt IA" class="mobile-header__logo">
+        <span class="mobile-header__brand-title">adapt IA</span>
       </div>
-      <nav class="app-header__nav">
-        <a href="professor-turmas.html" class="app-header__nav-item is-active"
-          >Turmas</a
-        >
-        <a href="professor-criar-atividade.html" class="app-header__nav-item"
-          >Criar atividade</a
-        >
-        <a href="professor-acompanhamento.html" class="app-header__nav-item"
-          >Acompanhamento</a
-        >
-      </nav>
-      <div class="app-header__user">
-        <button
-          type="button"
-          class="icon-button icon-button--notifications"
-          aria-label="Notificações"
-        ></button>
-        <div class="user-badge">
-          <span class="user-badge__name">Prof. Camila Nogueira</span>
-          <span class="user-badge__role">Ciências</span>
-        </div>
+      <div class="mobile-header__user">
+        <div class="sidebar-professor__avatar">S</div>
       </div>
     </header>
 
-    <main class="page-content">
-      <div class="page-title-row">
+    <!-- Backdrop escuro para fechar ao clicar fora -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <div class="professor-app-layout">
+      <!-- Sidebar Esquerda -->
+      <aside class="sidebar-professor" id="sidebar-professor">
         <div>
-          <h1 class="page-title">Minhas turmas</h1>
-          <p class="page-subtitle">
-            Acompanhe o andamento de cada turma e crie novas atividades.
-          </p>
+          <div class="sidebar-professor__brand">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <img src="assets/images/logo-branca.svg" alt="Adapt IA" class="sidebar-professor__logo">
+              <span class="sidebar-professor__brand-title">adapt IA</span>
+            </div>
+            <button type="button" class="btn-fechar-sidebar" id="btn-fechar-sidebar" aria-label="Fechar menu">&times;</button>
+          </div>
+
+          <nav class="sidebar-professor__nav">
+            <a href="professor-acompanhamento.html" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/layout-dashboard.svg" alt="" aria-hidden="true">
+              <span>Dashboard</span>
+            </a>
+            <a href="professor-turmas.html" class="sidebar-professor__nav-item is-active">
+              <img src="assets/images/icon/menu-desk/users.svg" alt="" aria-hidden="true">
+              <span>Turmas</span>
+            </a>
+            <a href="professor-desafios.html" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/book-open.svg" alt="" aria-hidden="true">
+              <span>Desafios</span>
+            </a>
+            <a href="#" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/calendar-check.svg" alt="" aria-hidden="true">
+              <span>Frequência</span>
+            </a>
+            <a href="#" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/message-square.svg" alt="" aria-hidden="true">
+              <span>Comunicação</span>
+              <span class="sidebar-professor__badge">8</span>
+            </a>
+            <a href="#" class="sidebar-professor__nav-item">
+              <img src="assets/images/icon/menu-desk/settings.svg" alt="" aria-hidden="true">
+              <span>Configurações</span>
+            </a>
+          </nav>
         </div>
-        <a href="professor-criar-atividade.html" class="button button--primary"
-          >Criar atividade</a
-        >
-      </div>
 
-      <section class="turma-grid" aria-label="Lista de turmas">
-        <article class="turma-card" data-turma-id="7a">
-          <header class="turma-card__header">
-            <h2 class="turma-card__nome" data-field="nome">7º Ano A</h2>
-            <span class="tag tag--disciplina" data-field="disciplina"
-              >Ciências</span
-            >
-          </header>
-          <p class="turma-card__ultima-atividade">
-            Última atividade:
-            <strong data-field="atividadeAtual">Sistema Digestório</strong>
-          </p>
-          <dl class="turma-card__stats">
-            <div class="stat">
-              <dt>Alunos</dt>
-              <dd data-field="alunos">28</dd>
-            </div>
-            <div class="stat">
-              <dt>Atividades ativas</dt>
-              <dd data-field="atividadesAtivas">2</dd>
-            </div>
-            <div class="stat">
-              <dt>Desempenho médio</dt>
-              <dd data-field="desempenhoMedio">74%</dd>
-            </div>
-          </dl>
-          <a
-            href="professor-acompanhamento.html?turma=7a"
-            class="turma-card__link"
-            >Ver acompanhamento</a
-          >
-        </article>
+        <!-- Rodapé do Usuário -->
+        <div class="sidebar-professor__user">
+          <div class="sidebar-professor__avatar">S</div>
+          <div class="sidebar-professor__user-info">
+            <span class="sidebar-professor__user-name">Carla Ramos</span>
+            <span class="sidebar-professor__user-role">Professor de Biologia</span>
+          </div>
+        </div>
+      </aside>
 
-        <article class="turma-card" data-turma-id="8b">
-          <header class="turma-card__header">
-            <h2 class="turma-card__nome" data-field="nome">8º Ano B</h2>
-            <span class="tag tag--disciplina" data-field="disciplina"
-              >Ciências</span
-            >
-          </header>
-          <p class="turma-card__ultima-atividade">
-            Última atividade:
-            <strong data-field="atividadeAtual">Sistema Respiratório</strong>
-          </p>
-          <dl class="turma-card__stats">
-            <div class="stat">
-              <dt>Alunos</dt>
-              <dd data-field="alunos">31</dd>
-            </div>
-            <div class="stat">
-              <dt>Atividades ativas</dt>
-              <dd data-field="atividadesAtivas">1</dd>
-            </div>
-            <div class="stat">
-              <dt>Desempenho médio</dt>
-              <dd data-field="desempenhoMedio">68%</dd>
-            </div>
-          </dl>
-          <a
-            href="professor-acompanhamento.html?turma=8b"
-            class="turma-card__link"
-            >Ver acompanhamento</a
-          >
-        </article>
+      <!-- Conteúdo Principal -->
+      <main class="main-conteudo-professor">
+        <div class="professor-header-row">
+          <div>
+            <h1 class="professor-page-title">Minhas turmas</h1>
+            <p style="color:var(--roxo-escuro-60); font-weight:600; margin-top:4px;">
+              Acompanhe o andamento de cada turma e crie novas atividades.
+            </p>
+          </div>
+          <a href="professor-criar-atividade.html" class="btn-nova-atividade">
+            <span>+ Criar atividade</span>
+          </a>
+        </div>
 
-        <article class="turma-card" data-turma-id="9a">
-          <header class="turma-card__header">
-            <h2 class="turma-card__nome" data-field="nome">9º Ano A</h2>
-            <span class="tag tag--disciplina" data-field="disciplina"
-              >Ciências</span
-            >
-          </header>
-          <p class="turma-card__ultima-atividade">
-            Última atividade:
-            <strong data-field="atividadeAtual">Genética Básica</strong>
-          </p>
-          <dl class="turma-card__stats">
-            <div class="stat">
-              <dt>Alunos</dt>
-              <dd data-field="alunos">26</dd>
-            </div>
-            <div class="stat">
-              <dt>Atividades ativas</dt>
-              <dd data-field="atividadesAtivas">3</dd>
-            </div>
-            <div class="stat">
-              <dt>Desempenho médio</dt>
-              <dd data-field="desempenhoMedio">81%</dd>
-            </div>
-          </dl>
-          <a
-            href="professor-acompanhamento.html?turma=9a"
-            class="turma-card__link"
-            >Ver acompanhamento</a
-          >
-        </article>
-      </section>
-    </main>
+        <section class="turma-grid" aria-label="Lista de turmas">
+          <article class="turma-card" data-turma-id="7a">
+            <header class="turma-card__header">
+              <h2 class="turma-card__nome" data-field="nome">7º Ano A</h2>
+              <span class="tag tag--disciplina" data-field="disciplina">Ciências</span>
+            </header>
+            <p class="turma-card__ultima-atividade">
+              Última atividade:
+              <strong data-field="atividadeAtual">Sistema Digestório</strong>
+            </p>
+            <dl class="turma-card__stats">
+              <div class="stat">
+                <dt>Alunos</dt>
+                <dd data-field="alunos">28</dd>
+              </div>
+              <div class="stat">
+                <dt>Atividades ativas</dt>
+                <dd data-field="atividadesAtivas">2</dd>
+              </div>
+              <div class="stat">
+                <dt>Desempenho médio</dt>
+                <dd data-field="desempenhoMedio">74%</dd>
+              </div>
+            </dl>
+            <a href="professor-acompanhamento.html?turma=7a" class="turma-card__link">Ver acompanhamento</a>
+          </article>
+
+          <article class="turma-card" data-turma-id="8b">
+            <header class="turma-card__header">
+              <h2 class="turma-card__nome" data-field="nome">8º Ano B</h2>
+              <span class="tag tag--disciplina" data-field="disciplina">Ciências</span>
+            </header>
+            <p class="turma-card__ultima-atividade">
+              Última atividade:
+              <strong data-field="atividadeAtual">Sistema Respiratório</strong>
+            </p>
+            <dl class="turma-card__stats">
+              <div class="stat">
+                <dt>Alunos</dt>
+                <dd data-field="alunos">31</dd>
+              </div>
+              <div class="stat">
+                <dt>Atividades ativas</dt>
+                <dd data-field="atividadesAtivas">1</dd>
+              </div>
+              <div class="stat">
+                <dt>Desempenho médio</dt>
+                <dd data-field="desempenhoMedio">68%</dd>
+              </div>
+            </dl>
+            <a href="professor-acompanhamento.html?turma=8b" class="turma-card__link">Ver acompanhamento</a>
+          </article>
+
+          <article class="turma-card" data-turma-id="9a">
+            <header class="turma-card__header">
+              <h2 class="turma-card__nome" data-field="nome">9º Ano A</h2>
+              <span class="tag tag--disciplina" data-field="disciplina">Ciências</span>
+            </header>
+            <p class="turma-card__ultima-atividade">
+              Última atividade:
+              <strong data-field="atividadeAtual">Genética Básica</strong>
+            </p>
+            <dl class="turma-card__stats">
+              <div class="stat">
+                <dt>Alunos</dt>
+                <dd data-field="alunos">26</dd>
+              </div>
+              <div class="stat">
+                <dt>Atividades ativas</dt>
+                <dd data-field="atividadesAtivas">3</dd>
+              </div>
+              <div class="stat">
+                <dt>Desempenho médio</dt>
+                <dd data-field="desempenhoMedio">81%</dd>
+              </div>
+            </dl>
+            <a href="professor-acompanhamento.html?turma=9a" class="turma-card__link">Ver acompanhamento</a>
+          </article>
+        </section>
+      </main>
+    </div>
 
     <script src="assets/js/global/global.js"></script>
     <script src="assets/js/global/data.js"></script>
