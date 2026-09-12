@@ -1,0 +1,38 @@
+:root {
+  /* Paleta de Cores */
+
+  /* Laranja */
+  --laranja-100: #EC4923;
+  --laranja-80: #ED7A56;
+  --laranja-20: #F5C1AE;
+
+  /* Roxo */
+  --roxo-100: #9245F7; 
+  --roxo-80: #9B6EF3;
+  --roxo-20: #D6C6F7;
+
+  /* Verde */
+  --verde-100: #8FD31A; 
+  --verde-80: #a1db6ec0;
+  --verde-20: #D9F0C4;
+
+  /* Roxo Escuro */
+  --roxo-escuro-100: #1B0735;
+  --roxo-escuro-80: #4A3F5C;
+  --roxo-escuro-20: #A9A3B3;
+
+  /* Azul */
+  --azul-100: #07AED3;
+  --azul-80: #4FC2DA;
+  --azul-20: #A9E2ED;
+
+  /* Tipografia */
+  --font-family-primary: 'Baloo', sans-serif;
+
+  --font-size-title-primary: 32px;
+  --font-size-title-secondary: 28px;
+  --font-size-body: 22px;
+  --font-size-support: 16px;
+  --font-size-caption: 16px;
+  --font-size-icon-text: 14px;
+}
