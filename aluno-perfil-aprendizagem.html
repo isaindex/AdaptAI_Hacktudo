@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Adapt AI — Descobrindo seu perfil de aprendizagem</title>
+</head>
+<body class="page page-aluno page-perfil-aprendizagem">
+
+  <header class="app-header app-header--aluno">
+    <span class="app-header__logo">Adapt AI</span>
+  </header>
+
+  <main class="page-content page-content--aluno">
+
+    <section class="onboarding-intro">
+      <h1 class="page-title">Vamos te conhecer melhor</h1>
+      <p class="page-subtitle">Responda 4 perguntas rápidas para personalizarmos suas atividades. Leva cerca de 1 minuto.</p>
+    </section>
+
+    <div class="progress-dots" aria-label="Progresso do teste">
+      <span class="progress-dots__item is-active" data-step="1"></span>
+      <span class="progress-dots__item" data-step="2"></span>
+      <span class="progress-dots__item" data-step="3"></span>
+      <span class="progress-dots__item" data-step="4"></span>
+    </div>
+
+    <form class="onboarding-question" id="pergunta-1" data-pergunta="1">
+      <fieldset>
+        <legend class="onboarding-question__enunciado">Quando você quer entender um assunto novo, o que mais te ajuda?</legend>
+
+        <div class="opcoes-lista" role="radiogroup">
+          <label class="opcao-item">
+            <input type="radio" name="pergunta-1" value="video-imagem" checked>
+            <span class="opcao-item__texto">Ver um vídeo ou uma imagem explicando</span>
+          </label>
+
+          <label class="opcao-item">
+            <input type="radio" name="pergunta-1" value="texto">
+            <span class="opcao-item__texto">Ler um texto explicando com calma</span>
+          </label>
+
+          <label class="opcao-item">
+            <input type="radio" name="pergunta-1" value="exercicio">
+            <span class="opcao-item__texto">Tentar resolver um exercício e ir aprendendo na prática</span>
+          </label>
+
+          <label class="opcao-item">
+            <input type="radio" name="pergunta-1" value="explicacao-falada">
+            <span class="opcao-item__texto">Ouvir alguém explicando em voz alta</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="onboarding-question__acoes">
+        <button type="button" class="button button--texto" data-action="pular-pergunta">Pular</button>
+        <button type="submit" class="button button--primary" data-action="proxima-pergunta">Continuar</button>
+      </div>
+    </form>
+
+  </main>
+
+</body>
+</html>
