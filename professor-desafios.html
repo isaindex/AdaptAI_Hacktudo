@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adapt AI — Desafios do Professor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/all.css">
+</head>
+<body class="page page-professor">
+  <!-- Header Mobile com Menu Hambúrguer -->
+  <header class="professor-mobile-header">
+    <button type="button" class="btn-hamburguer" id="btn-hamburguer" aria-label="Abrir menu" aria-expanded="false">
+      <span class="hamburguer-icon"></span>
+    </button>
+    <div class="mobile-header__brand">
+      <img src="assets/images/logo-branca.svg" alt="Adapt IA" class="mobile-header__logo">
+      <span class="mobile-header__brand-title">adapt IA</span>
+    </div>
+    <div class="mobile-header__user">
+      <div class="sidebar-professor__avatar">S</div>
+    </div>
+  </header>
+
+  <!-- Backdrop escuro para fechar ao clicar fora -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+  <div class="professor-app-layout">
+    <!-- Sidebar Esquerda -->
+    <aside class="sidebar-professor" id="sidebar-professor">
+      <div>
+        <div class="sidebar-professor__brand">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <img src="assets/images/logo-branca.svg" alt="Adapt IA" class="sidebar-professor__logo">
+            <span class="sidebar-professor__brand-title">adapt IA</span>
+          </div>
+          <button type="button" class="btn-fechar-sidebar" id="btn-fechar-sidebar" aria-label="Fechar menu">&times;</button>
+        </div>
+
+        <nav class="sidebar-professor__nav">
+          <a href="professor-acompanhamento.html" class="sidebar-professor__nav-item">
+            <img src="assets/images/icon/menu-desk/layout-dashboard.svg" alt="" aria-hidden="true">
+            <span>Dashboard</span>
+          </a>
+          <a href="professor-turmas.html" class="sidebar-professor__nav-item">
+            <img src="assets/images/icon/menu-desk/users.svg" alt="" aria-hidden="true">
+            <span>Turmas</span>
+          </a>
+          <a href="professor-desafios.html" class="sidebar-professor__nav-item is-active">
+            <img src="assets/images/icon/menu-desk/book-open.svg" alt="" aria-hidden="true">
+            <span>Desafios</span>
+          </a>
+          <a href="#" class="sidebar-professor__nav-item">
+            <img src="assets/images/icon/menu-desk/calendar-check.svg" alt="" aria-hidden="true">
+            <span>Frequência</span>
+          </a>
+          <a href="#" class="sidebar-professor__nav-item">
+            <img src="assets/images/icon/menu-desk/message-square.svg" alt="" aria-hidden="true">
+            <span>Comunicação</span>
+            <span class="sidebar-professor__badge">8</span>
+          </a>
+          <a href="#" class="sidebar-professor__nav-item">
+            <img src="assets/images/icon/menu-desk/settings.svg" alt="" aria-hidden="true">
+            <span>Configurações</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Rodapé do Usuário -->
+      <div class="sidebar-professor__user">
+        <div class="sidebar-professor__avatar">S</div>
+        <div class="sidebar-professor__user-info">
+          <span class="sidebar-professor__user-name">Carla Ramos</span>
+          <span class="sidebar-professor__user-role">Professor de Biologia</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Área Principal de Conteúdo -->
+    <main class="main-conteudo-professor">
+      <div class="professor-header-row">
+        <h1 class="professor-page-title">Desafios do Professor</h1>
+        <a href="professor-criar-atividade.html" class="btn-nova-atividade">
+          <span>+ Nova Atividade</span>
+        </a>
+      </div>
+
+      <!-- Grid de 6 Desafios -->
+      <section class="desafios-grid">
+        <!-- Card 1 -->
+        <article class="card-desafio-docente">
+          <div>
+            <div class="card-desafio-docente__topo">
+              <span class="card-desafio-docente__turma">5 ano</span>
+              <span class="card-desafio-docente__tempo">Hoje, 10:00</span>
+            </div>
+            <h2 class="card-desafio-docente__titulo">Lorem Ipsum</h2>
+            <p class="card-desafio-docente__descricao">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          </div>
+          <div class="card-desafio-docente__rodape">
+            <div class="card-desafio-docente__tags">
+              <span class="tag-card-docente tag-card-docente--laranja">tag</span>
+              <span class="tag-card-docente tag-card-docente--roxo">tag</span>
+            </div>
+            <span class="card-desafio-docente__autor">Carla Ramos</span>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card-desafio-docente">
+          <div>
+            <div class="card-desafio-docente__topo">
+              <span class="card-desafio-docente__turma">2 serie (Turma B)</span>
+              <span class="card-desafio-docente__tempo">Hoje, 14:30</span>
+            </div>
+            <h2 class="card-desafio-docente__titulo">Sistema Respiratorio</h2>
+            <p class="card-desafio-docente__descricao">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="card-desafio-docente__rodape">
+            <div class="card-desafio-docente__tags">
+              <span class="tag-card-docente tag-card-docente--laranja">tag</span>
+              <span class="tag-card-docente tag-card-docente--roxo">tag</span>
+            </div>
+            <span class="card-desafio-docente__autor">Carla Ramos</span>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card-desafio-docente">
+          <div>
+            <div class="card-desafio-docente__topo">
+              <span class="card-desafio-docente__turma">6 ano (Turma A)</span>
+              <span class="card-desafio-docente__tempo">Ontem</span>
+            </div>
+            <h2 class="card-desafio-docente__titulo">Lorem Ipsum</h2>
+            <p class="card-desafio-docente__descricao">
+             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="card-desafio-docente__rodape">
+            <div class="card-desafio-docente__tags">
+              <span class="tag-card-docente tag-card-docente--roxo">tag</span>
+            </div>
+            <span class="card-desafio-docente__autor">Carla Ramos</span>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card-desafio-docente">
+          <div>
+            <div class="card-desafio-docente__topo">
+              <span class="card-desafio-docente__turma">8 ano (Turma C)</span>
+              <span class="card-desafio-docente__tempo">Ontem</span>
+            </div>
+            <h2 class="card-desafio-docente__titulo">Lorem Ipsum</h2>
+            <p class="card-desafio-docente__descricao">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="card-desafio-docente__rodape">
+            <div class="card-desafio-docente__tags">
+              <span class="tag-card-docente tag-card-docente--laranja">tag</span>
+              <span class="tag-card-docente tag-card-docente--roxo">tag</span>
+            </div>
+            <span class="card-desafio-docente__autor">Carla Ramos</span>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card-desafio-docente">
+          <div>
+            <div class="card-desafio-docente__topo">
+              <span class="card-desafio-docente__turma">6 ano (Turma B)</span>
+              <span class="card-desafio-docente__tempo">2 dias atrás</span>
+            </div>
+            <h2 class="card-desafio-docente__titulo">Lorem Ipsum</h2>
+            <p class="card-desafio-docente__descricao">
+             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="card-desafio-docente__rodape">
+            <div class="card-desafio-docente__tags">
+              <span class="tag-card-docente tag-card-docente--roxo">tag</span>
+              <span class="tag-card-docente tag-card-docente--laranja">tag</span>
+            </div>
+            <span class="card-desafio-docente__autor">Mariana Silva</span>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card-desafio-docente">
+          <div>
+            <div class="card-desafio-docente__topo">
+              <span class="card-desafio-docente__turma">9 ano (Turma C)</span>
+              <span class="card-desafio-docente__tempo">3 dias atrás</span>
+            </div>
+            <h2 class="card-desafio-docente__titulo">Lorem Ipsum</h2>
+            <p class="card-desafio-docente__descricao">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="card-desafio-docente__rodape">
+            <div class="card-desafio-docente__tags">
+              <span class="tag-card-docente tag-card-docente--roxo">tag</span>
+              <span class="tag-card-docente tag-card-docente--laranja">tag</span>
+            </div>
+            <span class="card-desafio-docente__autor">Carla Ramos</span>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Painel Lateral Direito -->
+    <aside class="painel-lateral-direito">
+      <!-- Card Agenda da Semana -->
+      <section class="card-agenda-semana">
+        <h2 class="card-agenda-semana__titulo">Agenda da Semana</h2>
+        
+        <div class="agenda-dias-row">
+          <div class="agenda-dia-item">
+            <span class="agenda-dia-item__nome">Seg</span>
+            <span class="agenda-dia-item__numero">16</span>
+          </div>
+          <div class="agenda-dia-item">
+            <span class="agenda-dia-item__nome">Ter</span>
+            <span class="agenda-dia-item__numero">17</span>
+          </div>
+          <div class="agenda-dia-item is-active">
+            <span class="agenda-dia-item__nome">Qua</span>
+            <span class="agenda-dia-item__numero">18</span>
+          </div>
+          <div class="agenda-dia-item">
+            <span class="agenda-dia-item__nome">Qui</span>
+            <span class="agenda-dia-item__numero">19</span>
+          </div>
+          <div class="agenda-dia-item">
+            <span class="agenda-dia-item__nome">Sex</span>
+            <span class="agenda-dia-item__numero">20</span>
+          </div>
+        </div>
+
+        <h3 class="agenda-desafios-subtitulo">Desafios da semana</h3>
+        <div class="agenda-turmas-lista">
+          <div class="agenda-turma-item">
+            <span class="agenda-turma-item__nome">Turma X</span>
+            <p class="agenda-turma-item__desc">Estimula o eu, o outro e o nós por meio da livre expressão criativa.</p>
+          </div>
+          <div class="agenda-turma-item">
+            <span class="agenda-turma-item__nome">Turma Y</span>
+            <p class="agenda-turma-item__desc">Desenvolve a coordenação ampla, equilíbrio e destreza de dedos.</p>
+          </div>
+          <div class="agenda-turma-item">
+            <span class="agenda-turma-item__nome">Turma B</span>
+            <p class="agenda-turma-item__desc">Inicia o raciocínio matemático e a aquisição de novos termos orais.</p>
+          </div>
+          <div class="agenda-turma-item">
+            <span class="agenda-turma-item__nome">Turma A</span>
+            <p class="agenda-turma-item__desc">Promove a cooperação, empatia e partilha entre colegas.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Banner com Mascote -->
+      <section class="card-mascote-desafios">
+        <div class="card-mascote-desafios__conteudo">
+          <h3 class="card-mascote-desafios__titulo">6 desafios prontos</h3>
+          <p class="card-mascote-desafios__texto">Revise o conteúdo antes de publicar para a turma.</p>
+        </div>
+        <img src="assets/images/mascote/neutro.svg" alt="Mascote Adapt IA" class="card-mascote-desafios__img">
+      </section>
+    </aside>
+  </div>
+
+  <script src="assets/js/global/global.js"></script>
+</body>
+</html>
