@@ -1,6 +1,8 @@
 @import url("./global/global.css");
 @import url("./pages/aluno-atividades.css");
+@import url("./pages/aluno-atividades-personalizadas.css");
 @import url("./pages/aluno-desempenho.css");
+@import url("./pages/aluno-form.css");
 @import url("./pages/aluno-perfil.css");
 @import url("./pages/professor-acompanhamento.css");
 @import url("./pages/professor-atividade.css");

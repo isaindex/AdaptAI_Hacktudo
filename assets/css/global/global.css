@@ -27,7 +27,7 @@
   --azul-20: #A9E2ED;
 
   /* Tipografia */
-  --font-family-primary: 'Baloo', sans-serif;
+  --font-family-primary: 'Baloo 2', sans-serif;
 
   --font-size-title-primary: 32px;
   --font-size-title-secondary: 28px;
@@ -35,4 +35,15 @@
   --font-size-support: 16px;
   --font-size-caption: 16px;
   --font-size-icon-text: 14px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  color: var(--roxo-escuro-100);
+  margin: 0;
+  padding: 0;
 }
