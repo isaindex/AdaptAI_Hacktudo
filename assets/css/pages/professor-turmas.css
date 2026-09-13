@@ -42,13 +42,29 @@
 .sidebar-professor__brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
   padding: 0 10px 32px 10px;
 }
 
+.sidebar-professor__brand-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
 .sidebar-professor__logo {
-  height: 40px;
+  height: 38px;
   width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.sidebar-professor__wordmark {
+  height: 24px; /* Tamanho proporcional ao símbolo (ícone 38px / logotipo 24px) */
+  width: auto;
+  display: block;
+  flex-shrink: 0;
 }
 
 .sidebar-professor__brand-title {
@@ -723,12 +739,21 @@
   .mobile-header__brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    text-decoration: none;
   }
 
   .mobile-header__logo {
-    height: 32px;
+    height: 30px;
     width: auto;
+    display: block;
+  }
+
+  .mobile-header__wordmark {
+    height: 19px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
   }
 
   .mobile-header__brand-title {
