@@ -118,7 +118,6 @@ AdaptAI_Hacktudo/
 │       ├── global/
 │       └── pages/
 ├── README.md
-└── README_adapt_IA.md
 ```
 
 ## Tecnologias utilizadas
