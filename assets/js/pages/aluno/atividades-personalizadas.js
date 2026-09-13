@@ -139,7 +139,7 @@
       conteudoHTML:
         '<span class="tag tag--formato">' + atividade.formato + '</span>' +
         '<p class="desafio__enunciado">' + atividade.enunciado + '</p>' +
-        (atividade.formato === 'Imagem' ? '<div class="desafio__imagem-placeholder" aria-hidden="true">🫁</div>' : '') +
+        (atividade.formato === 'Imagem' ? '<div class="desafio__imagem-card"><img src="assets/images/icon/pulmao-realista.jpg" alt="Ilustração anatômica do Sistema Respiratório com detalhe dos alvéolos" class="desafio__imagem-realista"></div>' : '') +
         '<div class="opcoes-lista" role="radiogroup">' + alternativasHTML + '</div>' +
         '<div class="panel__acoes">' +
           '<button type="button" class="button button--primary" id="btn-responder-desafio">Responder</button>' +

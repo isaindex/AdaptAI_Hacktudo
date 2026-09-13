@@ -1,0 +1,378 @@
+/* ======================================================
+   Adapt AI — Interface Mobile do Aluno (Sem Moldura)
+   Tela: Desafio Interativo (Telas 2 e 3 da Referência)
+   ====================================================== */
+
+.page-desafio-mobile {
+  background-color: #F4F1F9;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  font-family: var(--font-family-primary, 'Baloo 2', sans-serif);
+  color: var(--roxo-escuro-100, #1B0735);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ------------------------------------------------------
+   Header do Desafio
+   ------------------------------------------------------ */
+.desafio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px 10px;
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.desafio-header__back {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: #EDE7FB;
+  border: 1px solid #E2D9F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.desafio-header__back:hover {
+  background-color: #E2D7F9;
+  transform: translateX(-2px);
+}
+
+.desafio-header__title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1B0735;
+  margin: 0;
+}
+
+.desafio-header__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #D2F7D4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.desafio-header__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------------------------------------------------------
+   Barra de Progresso com Traços (Dashes)
+   ------------------------------------------------------ */
+.desafio-dashes {
+  display: flex;
+  gap: 4px;
+  padding: 6px 24px 14px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.desafio-dash {
+  flex: 1;
+  height: 4px;
+  border-radius: 999px;
+  background-color: #DDD9E8;
+  transition: background-color 0.3s ease;
+}
+
+.desafio-dash.is-active {
+  background-color: #8534EC;
+}
+
+/* ------------------------------------------------------
+   Card com Ilustração da Questão (Pulmões)
+   ------------------------------------------------------ */
+.desafio-card-imagem {
+  margin: 0 24px 14px;
+  border-radius: 18px;
+  background: #EDE7FB;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(27, 7, 53, 0.04);
+}
+
+.desafio-card-imagem img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+/* ------------------------------------------------------
+   Enunciado da Questão + Mascote Pensativo
+   ------------------------------------------------------ */
+.desafio-pergunta-bloco {
+  padding: 0 24px 12px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.desafio-pergunta-texto {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #1B0735;
+  line-height: 1.25;
+  margin: 0;
+  max-width: calc(100% - 64px);
+  letter-spacing: -0.2px;
+}
+
+.desafio-mascote-pensando {
+  position: absolute;
+  top: -14px;
+  right: 14px;
+  width: 70px;
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(27, 7, 53, 0.12));
+}
+
+/* ------------------------------------------------------
+   Lista de Alternativas (A, B, C, D)
+   ------------------------------------------------------ */
+.desafio-opcoes {
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.desafio-opcao {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 14px;
+  background-color: #F4F3F7;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.desafio-opcao:hover {
+  background-color: #ECEAF2;
+}
+
+/* Badge com a letra (A, B, C, D) */
+.desafio-opcao__badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: #CFD6DC;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.desafio-opcao__texto {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1B0735;
+  letter-spacing: -0.2px;
+}
+
+/* Estado Selecionado (Tela 2 da Referência) */
+.desafio-opcao.is-selected {
+  background-color: #EDE7FB;
+  border-color: #8534EC;
+}
+
+.desafio-opcao.is-selected .desafio-opcao__badge {
+  background-color: #8534EC;
+  color: #FFFFFF;
+}
+
+/* Estado Errado / Incorreto (Paleta Laranja) */
+.desafio-opcao.is-wrong {
+  background-color: #FDF1EE;
+  border-color: #EC4923;
+  animation: shakeWrong 0.35s ease;
+}
+
+.desafio-opcao.is-wrong .desafio-opcao__badge {
+  background-color: #EC4923;
+  color: #FFFFFF;
+}
+
+@keyframes shakeWrong {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+/* Estado Correto / Revelado (Paleta Verde) */
+.desafio-opcao.is-correct {
+  background-color: #EDF9D8;
+  border-color: #8FD31A;
+  animation: popCorrect 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.desafio-opcao.is-correct .desafio-opcao__badge {
+  background-color: #8FD31A;
+  color: #FFFFFF;
+}
+
+@keyframes popCorrect {
+  0% { transform: scale(0.98); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Indicador de status (Ícone no fim do card) */
+.desafio-opcao__status {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 800;
+  display: none;
+}
+
+.desafio-opcao.is-wrong .desafio-opcao__status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #EC4923;
+  color: #FFFFFF;
+  font-size: 12px;
+}
+
+.desafio-opcao.is-wrong .desafio-opcao__status::after {
+  content: "✕";
+}
+
+.desafio-opcao.is-correct .desafio-opcao__status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #8FD31A;
+  color: #FFFFFF;
+  font-size: 13px;
+}
+
+.desafio-opcao.is-correct .desafio-opcao__status::after {
+  content: "✓";
+}
+
+/* ------------------------------------------------------
+   Botão de Ação Principal (Responder / Continue)
+   ------------------------------------------------------ */
+.desafio-acao-container {
+  padding: 18px 24px 10px;
+  margin-top: auto;
+}
+
+.btn-desafio-action {
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  font-family: inherit;
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Botão "Responder" Laranja (Tela 2) */
+.btn-desafio-action--responder {
+  background-color: #EC4923;
+  box-shadow: 0 6px 16px rgba(236, 73, 35, 0.3);
+}
+
+.btn-desafio-action--responder:hover {
+  background-color: #D93B16;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(236, 73, 35, 0.38);
+}
+
+/* Botão "Continue" Roxo (Tela 3) */
+.btn-desafio-action--continue {
+  background-color: #8534EC;
+  box-shadow: 0 6px 16px rgba(133, 52, 236, 0.3);
+  animation: pulseButton 0.4s ease;
+}
+
+.btn-desafio-action--continue:hover {
+  background-color: #7425DB;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(133, 52, 236, 0.4);
+}
+
+@keyframes pulseButton {
+  0% { transform: scale(0.96); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* Modal / Toast de Feedback */
+.desafio-feedback-toast {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 200;
+  max-width: 90%;
+  text-align: center;
+}
+
+.desafio-feedback-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.desafio-feedback-toast--success {
+  background-color: #8FD31A;
+  color: #1B0735;
+  box-shadow: 0 8px 20px rgba(143, 211, 26, 0.35);
+}
+
+.desafio-feedback-toast--error {
+  background-color: #EC4923;
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(236, 73, 35, 0.35);
+}

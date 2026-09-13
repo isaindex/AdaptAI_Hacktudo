@@ -7,120 +7,316 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/global/global.css">
   <link rel="stylesheet" href="assets/css/all.css">
-  <link rel="stylesheet" href="assets/css/pages/aluno-form.css">
+  <link rel="stylesheet" href="assets/css/pages/aluno-questionario.css">
 </head>
 <body class="page-questionario">
 
-  <header class="header-questionario">
-    <span class="logo-nome">
-      <img src="assets/images/logo-lilas.svg" alt="Mascote AI"> 
-      <img src="assets/images/logotipo-sem-icone.svg" alt="Logo Adapt AI"></span>
-  </header>
+  <div class="aluno-mobile-container">
 
-  <main class="page-content page-content--aluno">
-
-    <!-- Barra de progresso do questionário -->
-    <div class="barra-progresso">
-        <!-- Colocar barra de progresso -->
-      <div class="form-progresso" id="formProgresso"></div>
-    </div>
-    <p class="form-progresso-texto"><span id="perguntaAtual">0</span> de <span id="totalPerguntas">3</span></p>
-
-    <form id="formQuestionario" class="quiz-form">
-
-      <!-- Pergunta 1 -->
-      <fieldset class="form-pergunta">
-        <legend class="form-pergunta__enunciado">Como você prefere aprender?</legend>
-
-        <label class="form-opcao">
-          <input type="checkbox" name="p1">
-          <span>Lendo textos</span>
-        </label>
-
-        <label class="form-opcao">
-          <input type="checkbox" name="p1">
-          <span>Assistindo vídeos</span>
-        </label>
-
-        <label class="form-opcao">
-          <input type="checkbox" name="p1">
-          <span>Ouvindo áudios</span>
-        </label>
-
-        <label class="form-opcao">
-          <input type="checkbox" name="p1">
-          <span>Fazendo exercícios práticos</span>
-        </label>
-      </fieldset>
-
-      
-
-      <!-- Pergunta 2 -->
-      <fieldset class="form-pergunta" hidden>
-        <legend class="form-pergunta__enunciado">Quais dificuldades você mais sente ao estudar?</legend>
-
-        <label class="form-opcao">
-          <input type="checkbox" name="p2">
-          <span>Falta de tempo</span>
-        </label>
-
-        <label class="form-opcao">
-          <input type="checkbox" name="p2">
-          <span>Dificuldade de concentração</span>
-        </label>
-
-        <label class="form-opcao">
-          <input type="checkbox" name="p2">
-          <span>Conteúdo muito difícil</span>
-        </label>
-
-        <label class="form-opcao">
-          <input type="checkbox" name="p2">
-          <span>Falta de motivação</span>
-        </label>
-      </fieldset>
-      
-      <!-- Pergunta 3 -->
-      <fieldset class="form-pergunta" hidden>
-        <legend class="form-pergunta__enunciado">Quais horários você costuma estudar?</legend>
-
-        <label class="form-opcao">
-          <input type="checkbox" name="p3">
-          <span>Manhã</span>
-        </label>
-
-        <label class="form-opcao">
-          <input type="checkbox" name="p3">
-          <span>Tarde</span>
-        </label>
-
-        <label class="form-opcao">
-          <input type="checkbox" name="p3">
-          <span>Noite</span>
-        </label>
-
-        <label class="form-opcao">
-          <input type="checkbox" name="p3">
-          <span>Madrugada</span>
-        </label>
-      </fieldset>
-
-      <div class="quiz-navegacao">
-        <button type="button" id="btnAvancar" class="button--primary">Próxima</button>
+    <!-- Header do Questionário -->
+    <header class="header-questionario">
+      <a href="aluno-atividades-personalizadas.html" class="btn-voltar-quiz" aria-label="Voltar para Atividades Personalizadas">
+        <svg width="10" height="16" viewBox="0 0 8 14" fill="none">
+          <path d="M7 1L1 7L7 13" stroke="#8534EC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <div class="logo-wrap">
+        <img src="assets/images/logo-lilas.svg" alt="Adapt IA Ícone" class="header-logo-icon">
+        <img src="assets/images/logotipo-sem-icone.svg" alt="Adapt IA" class="header-logo-text">
       </div>
+      <div style="width: 38px;" aria-hidden="true"></div>
+    </header>
 
-    </form>
+    <main class="quiz-main-content">
 
-    <!-- Agradecimento final -->
-    <section id="resultadoFinal" class="painel-resultado" hidden aria-live="polite">
-      <h2 class="panel__titulo">Obrigado por responder!</h2>
-      <p id="resultadoTexto" class="resultado__texto">
-        Suas respostas foram registradas com sucesso.
-      </p>
-    </section>
+      <!-- Card do Questionário -->
+      <section class="quiz-card" id="quizCardWrapper">
 
-  </main>
+        <!-- Barra de Progresso no topo do Card -->
+        <div class="quiz-card__progress-header">
+          <div class="quiz-card__step-meta">
+            <span class="quiz-step-tag" id="quizStepTag">Etapa 1 de 3</span>
+            <span class="quiz-step-fraction" id="progressoTexto">Pergunta 1 de 3</span>
+          </div>
+          <div class="quiz-progress-track">
+            <div class="quiz-progress-fill" id="formProgresso" style="width: 33.33%;"></div>
+          </div>
+        </div>
+
+        <form id="formQuestionario" class="quiz-form">
+
+          <!-- Pergunta 1 -->
+          <fieldset class="form-pergunta" id="pergunta-1">
+            <h2 class="quiz-enunciado">Como você prefere aprender?</h2>
+            <p class="quiz-subtitulo">Escolha as opções que mais combinam com você:</p>
+
+            <div class="quiz-opcoes-list">
+              <label class="quiz-opcao-card">
+                <input type="checkbox" name="p1" value="textos">
+                <span class="quiz-opcao-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                  </svg>
+                </span>
+                <span class="quiz-opcao-texto">Lendo textos</span>
+                <span class="quiz-opcao-check">
+                  <svg viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+
+              <label class="quiz-opcao-card">
+                <input type="checkbox" name="p1" value="videos" checked>
+                <span class="quiz-opcao-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="3"/>
+                    <polygon points="10 8 16 12 10 16" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="quiz-opcao-texto">Assistindo vídeos</span>
+                <span class="quiz-opcao-check">
+                  <svg viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+
+              <label class="quiz-opcao-card">
+                <input type="checkbox" name="p1" value="audios">
+                <span class="quiz-opcao-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+                  </svg>
+                </span>
+                <span class="quiz-opcao-texto">Ouvindo áudios</span>
+                <span class="quiz-opcao-check">
+                  <svg viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+
+              <label class="quiz-opcao-card">
+                <input type="checkbox" name="p1" value="pratica" checked>
+                <span class="quiz-opcao-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                    <rect x="8" y="2" width="8" height="4" rx="1"/>
+                    <path d="M9 14l2 2 4-4"/>
+                  </svg>
+                </span>
+                <span class="quiz-opcao-texto">Fazendo exercícios práticos</span>
+                <span class="quiz-opcao-check">
+                  <svg viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Pergunta 2 -->
+          <fieldset class="form-pergunta" id="pergunta-2" hidden>
+            <h2 class="quiz-enunciado">Quais dificuldades você mais sente ao estudar?</h2>
+            <p class="quiz-subtitulo">Selecione o que costuma ser mais desafiador:</p>
+
+            <div class="quiz-opcoes-list">
+              <label class="quiz-opcao-card">
+                <input type="checkbox" name="p2" value="tempo">
+                <span class="quiz-opcao-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </span>
+                <span class="quiz-opcao-texto">Falta de tempo</span>
+                <span class="quiz-opcao-check">
+                  <svg viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+
+              <label class="quiz-opcao-card">
+                <input type="checkbox" name="p2" value="concentracao" checked>
+                <span class="quiz-opcao-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="6"/>
+                    <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="quiz-opcao-texto">Dificuldade de concentração</span>
+                <span class="quiz-opcao-check">
+                  <svg viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+
+              <label class="quiz-opcao-card">
+                <input type="checkbox" name="p2" value="dificil">
+                <span class="quiz-opcao-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                  </svg>
+                </span>
+                <span class="quiz-opcao-texto">Conteúdo muito difícil</span>
+                <span class="quiz-opcao-check">
+                  <svg viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+
+              <label class="quiz-opcao-card">
+                <input type="checkbox" name="p2" value="motivacao">
+                <span class="quiz-opcao-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="quiz-opcao-texto">Falta de motivação</span>
+                <span class="quiz-opcao-check">
+                  <svg viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Pergunta 3 -->
+          <fieldset class="form-pergunta" id="pergunta-3" hidden>
+            <h2 class="quiz-enunciado">Quais horários você costuma estudar?</h2>
+            <p class="quiz-subtitulo">Marque os períodos em que você rende melhor:</p>
+
+            <div class="quiz-opcoes-list">
+              <label class="quiz-opcao-card">
+                <input type="checkbox" name="p3" value="manha">
+                <span class="quiz-opcao-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 18a5 5 0 0 0-10 0"/>
+                    <line x1="12" y1="2" x2="12" y2="9"/>
+                    <line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/>
+                    <line x1="1" y1="18" x2="3" y2="18"/>
+                    <line x1="21" y1="18" x2="23" y2="18"/>
+                    <line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/>
+                    <line x1="23" y1="22" x2="1" y2="22"/>
+                  </svg>
+                </span>
+                <span class="quiz-opcao-texto">Manhã (06h - 12h)</span>
+                <span class="quiz-opcao-check">
+                  <svg viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+
+              <label class="quiz-opcao-card">
+                <input type="checkbox" name="p3" value="tarde" checked>
+                <span class="quiz-opcao-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                  </svg>
+                </span>
+                <span class="quiz-opcao-texto">Tarde (12h - 18h)</span>
+                <span class="quiz-opcao-check">
+                  <svg viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+
+              <label class="quiz-opcao-card">
+                <input type="checkbox" name="p3" value="noite" checked>
+                <span class="quiz-opcao-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                  </svg>
+                </span>
+                <span class="quiz-opcao-texto">Noite (18h - 23h)</span>
+                <span class="quiz-opcao-check">
+                  <svg viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+
+              <label class="quiz-opcao-card">
+                <input type="checkbox" name="p3" value="madrugada">
+                <span class="quiz-opcao-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
+                    <path d="M19 3v4"/>
+                    <path d="M21 5h-4"/>
+                  </svg>
+                </span>
+                <span class="quiz-opcao-texto">Madrugada (23h - 06h)</span>
+                <span class="quiz-opcao-check">
+                  <svg viewBox="0 0 12 10" fill="none">
+                    <path d="M1 5L4.5 8.5L11 1.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Ações de Navegação -->
+          <div class="quiz-card__actions">
+            <button type="button" id="btnVoltar" class="btn-quiz-voltar" style="display: none;">Voltar</button>
+            <button type="button" id="btnAvancar" class="btn-quiz-avancar">
+              <span>Próxima</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
+        </form>
+
+      </section>
+
+      <!-- Agradecimento e Celebração Final -->
+      <section id="resultadoFinal" class="painel-resultado" hidden aria-live="polite">
+        <div class="painel-resultado__badge-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8534EC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <h2 class="panel__titulo">Obrigado por responder, Mariana!</h2>
+        <p id="resultadoTexto" class="resultado__texto">
+          Suas preferências foram registradas com sucesso. A inteligência artificial já adaptou sua jornada e atividades para o seu estilo de estudo!
+        </p>
+        <div class="resultado-botoes-wrap">
+          <a href="aluno-atividades-personalizadas.html" class="btn-resultado-acao btn-resultado-acao--primary">
+            Ver Atividades Personalizadas
+          </a>
+          <a href="aluno-inicio.html" class="btn-resultado-acao btn-resultado-acao--secondary">
+            Ir para Minha Jornada
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
 
   <script src="assets/js/pages/aluno/aluno_form.js"></script>
 </body>

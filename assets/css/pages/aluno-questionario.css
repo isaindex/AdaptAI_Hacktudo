@@ -1,0 +1,443 @@
+/* ======================================================
+   Adapt AI — Interface Mobile do Aluno (Sem Moldura)
+   Tela: Questionário de Perfil de Aprendizagem
+   ====================================================== */
+
+[hidden] {
+  display: none !important;
+}
+
+.page-questionario {
+  background-color: #F4F1F9;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  font-family: var(--font-family-primary, 'Baloo 2', sans-serif);
+  color: var(--roxo-escuro-100, #1B0735);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container Mobile */
+.aluno-mobile-container {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  background-color: #FAF8FD;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 32px;
+  box-sizing: border-box;
+  box-shadow: 0 0 24px rgba(27, 7, 53, 0.06);
+}
+
+/* Header do Questionário */
+.header-questionario {
+  width: 100%;
+  padding: 18px 24px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.btn-voltar-quiz {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background-color: #EDE7FB;
+  border: 1px solid #E2D9F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-voltar-quiz:hover {
+  background-color: #E2D7F9;
+  transform: translateX(-2px);
+}
+
+.header-questionario .logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-logo-icon {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.header-logo-text {
+  height: 24px; /* Proporção proporcional e harmonizada em relação ao ícone de 38px */
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Conteúdo Principal */
+.quiz-main-content {
+  padding: 8px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Card Unificado do Questionário */
+.quiz-card {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  border: 1.5px solid #EAE6F3;
+  padding: 22px 20px 20px;
+  box-shadow: 0 8px 24px rgba(27, 7, 53, 0.05);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.quiz-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Topo do Card: Progresso e Contador */
+.quiz-card__progress-header {
+  margin-bottom: 18px;
+}
+
+.quiz-card__step-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.quiz-step-tag {
+  background-color: #EDE7FB;
+  color: #8534EC;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.quiz-step-fraction {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6A607C;
+}
+
+.quiz-progress-track {
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  background-color: #EDE7FB;
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: #8534EC;
+  transition: width 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Enunciado e Subtítulo */
+.form-pergunta {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.quiz-enunciado {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1B0735;
+  margin: 0 0 6px;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+}
+
+.quiz-subtitulo {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #6A607C;
+  margin: 0 0 16px;
+  line-height: 1.35;
+}
+
+/* Lista de Alternativas Touch */
+.quiz-opcoes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+.quiz-opcao-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  min-height: 56px;
+  box-sizing: border-box;
+  background-color: #FAF8FD;
+  border: 1.5px solid #EAE6F3;
+  border-radius: 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.quiz-opcao-card:hover {
+  background-color: #F4EFFC;
+  border-color: #D6C6F7;
+}
+
+.quiz-opcao-card input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.quiz-opcao-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background-color: #EDE7FB;
+  color: #8534EC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.quiz-opcao-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.quiz-opcao-texto {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1B0735;
+  flex: 1;
+  line-height: 1.3;
+}
+
+/* Indicador Checkmark Customizado */
+.quiz-opcao-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #D6C6F7;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.quiz-opcao-check svg {
+  display: none;
+  width: 12px;
+  height: 12px;
+}
+
+/* Estado Selecionado */
+.quiz-opcao-card:has(input:checked) {
+  background-color: #EDE7FB;
+  border-color: #8534EC;
+  box-shadow: 0 4px 14px rgba(133, 52, 236, 0.12);
+}
+
+.quiz-opcao-card:has(input:checked) .quiz-opcao-icon {
+  background-color: #8534EC;
+  color: #FFFFFF;
+}
+
+.quiz-opcao-card:has(input:checked) .quiz-opcao-check {
+  background-color: #8534EC;
+  border-color: #8534EC;
+}
+
+.quiz-opcao-card:has(input:checked) .quiz-opcao-check svg {
+  display: block;
+}
+
+/* Rodapé de Ações do Quiz */
+.quiz-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #F0EDF7;
+}
+
+.btn-quiz-voltar {
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background-color: #EDE7FB;
+  color: #8534EC;
+  border: 1px solid #E2D9F7;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-quiz-voltar:hover {
+  background-color: #E2D7F9;
+}
+
+.btn-quiz-avancar {
+  flex: 1;
+  height: 46px;
+  background-color: #8534EC;
+  color: #FFFFFF;
+  border-radius: 999px;
+  border: none;
+  font-family: inherit;
+  font-size: 15.5px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 16px rgba(133, 52, 236, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-quiz-avancar:hover {
+  background-color: #7425DB;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(133, 52, 236, 0.38);
+}
+
+/* Card de Resultado Final / Celebração */
+.painel-resultado {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  border: 1.5px solid #EAE6F3;
+  padding: 36px 22px 28px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(27, 7, 53, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  box-sizing: border-box;
+  animation: scaleIn 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.painel-resultado__badge-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: #EDE7FB;
+  border: 1px solid #D6C6F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.painel-resultado .panel__titulo {
+  font-size: 21px;
+  font-weight: 800;
+  color: #1B0735;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.painel-resultado .resultado__texto {
+  font-size: 13.5px;
+  color: #6A607C;
+  line-height: 1.45;
+  margin: 0 0 24px;
+}
+
+.resultado-botoes-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-resultado-acao {
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.btn-resultado-acao--primary {
+  background-color: #8534EC;
+  color: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(133, 52, 236, 0.28);
+}
+
+.btn-resultado-acao--primary:hover {
+  background-color: #7425DB;
+  transform: translateY(-1px);
+}
+
+.btn-resultado-acao--secondary {
+  background-color: #EDE7FB;
+  color: #8534EC;
+  border: 1.5px solid #8534EC;
+}
+
+.btn-resultado-acao--secondary:hover {
+  background-color: #E2D7F9;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .aluno-mobile-container {
+    max-width: 100%;
+    box-shadow: none;
+  }
+}

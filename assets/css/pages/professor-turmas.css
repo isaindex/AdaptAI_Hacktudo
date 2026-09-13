@@ -42,13 +42,29 @@
 .sidebar-professor__brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
   padding: 0 10px 32px 10px;
 }
 
+.sidebar-professor__brand-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
 .sidebar-professor__logo {
-  height: 40px;
+  height: 38px;
   width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.sidebar-professor__wordmark {
+  height: 24px; /* Tamanho proporcional ao símbolo (ícone 38px / logotipo 24px) */
+  width: auto;
+  display: block;
+  flex-shrink: 0;
 }
 
 .sidebar-professor__brand-title {
@@ -435,11 +451,11 @@
 /* Banner Informativo com Mascote */
 .card-mascote-desafios {
   position: relative;
-  background: linear-gradient(135deg, #9245F7 0%, #7A28E5 100%);
+  background: var(--roxo-100, #8534EC);
   border-radius: var(--radius-xl);
   padding: 26px 22px;
   color: var(--branco);
-  box-shadow: var(--sombra-card-roxa);
+  box-shadow: 0 4px 14px rgba(27, 7, 53, 0.08);
   overflow: visible;
   display: flex;
   flex-direction: column;
@@ -723,12 +739,21 @@
   .mobile-header__brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    text-decoration: none;
   }
 
   .mobile-header__logo {
-    height: 32px;
+    height: 30px;
     width: auto;
+    display: block;
+  }
+
+  .mobile-header__wordmark {
+    height: 19px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
   }
 
   .mobile-header__brand-title {
