@@ -139,7 +139,7 @@
       conteudoHTML:
         '<span class="tag tag--formato">' + atividade.formato + '</span>' +
         '<p class="desafio__enunciado">' + atividade.enunciado + '</p>' +
-        (atividade.formato === 'Imagem' ? '<div class="desafio__imagem-placeholder" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 2V11M7 12C4 12 2 14.5 2 18.5C2 22 5 22 8 22C10 22 11.5 20.5 12 19V12H7ZM17 12C20 12 22 14.5 22 18.5C22 22 19 22 16 22C14 22 12.5 20.5 12 19V12H17Z" stroke="#8534EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' : '') +
+        (atividade.formato === 'Imagem' ? '<div class="desafio__imagem-card"><img src="assets/images/icon/pulmao-realista.jpg" alt="Ilustração anatômica do Sistema Respiratório com detalhe dos alvéolos" class="desafio__imagem-realista"></div>' : '') +
         '<div class="opcoes-lista" role="radiogroup">' + alternativasHTML + '</div>' +
         '<div class="panel__acoes">' +
           '<button type="button" class="button button--primary" id="btn-responder-desafio">Responder</button>' +

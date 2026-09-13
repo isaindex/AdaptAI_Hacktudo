@@ -426,6 +426,26 @@
   line-height: 1.35;
 }
 
+.desafio__imagem-card {
+  margin: 12px 0 16px;
+  border-radius: 16px;
+  background-color: #EDE7FB;
+  border: 1px solid #E2D9F7;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(27, 7, 53, 0.05);
+}
+
+.desafio__imagem-realista {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
 .desafio__imagem-placeholder {
   font-size: 50px;
   text-align: center;
