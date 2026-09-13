@@ -221,11 +221,11 @@
 
 /* Card de Insights Pedagógicos com IA */
 .dashboard-card-insights {
-  background: linear-gradient(135deg, var(--branco) 0%, var(--roxo-10) 100%);
-  border: 2px solid var(--roxo-40);
+  background: var(--branco);
+  border: 1px solid var(--roxo-30, #D6C6F7);
   border-radius: var(--radius-xl);
   padding: 26px;
-  box-shadow: var(--sombra-card);
+  box-shadow: 0 2px 8px rgba(27, 7, 53, 0.04);
 }
 
 .dashboard-card-insights__header {

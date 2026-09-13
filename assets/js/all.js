@@ -1,1 +1,9 @@
-// Pro import
+import './global/global.js';
+import './global/data.js';
+import './pages/aluno/aluno_form.js';
+import './pages/aluno/aluno-desafio.js';
+import './pages/aluno/atividades-personalizadas.js';
+import './pages/aluno/meu-desempenho.js';
+import './pages/professor/acompanhamento.js';
+import './pages/professor/criar_atividade.js';
+import './pages/professor/turmas.js';

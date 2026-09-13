@@ -134,3 +134,48 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  // desempenho 
+  const notificacaoItems = document.querySelectorAll('.aluno-nav-bottom__item[aria-label="Notificações"], .aluno-header__btn');
+  
+  notificacaoItems.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      let toast = document.getElementById('notificacao-global-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'notificacao-global-toast';
+        toast.style.cssText = `
+          position: fixed;
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%) translateY(-20px);
+          background-color: #8534EC;
+          color: #FFFFFF;
+          font-family: 'Baloo 2', sans-serif;
+          font-weight: 700;
+          font-size: 14px;
+          padding: 10px 22px;
+          border-radius: 999px;
+          box-shadow: 0 8px 24px rgba(133, 52, 236, 0.35);
+          opacity: 0;
+          pointer-events: none;
+          transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+          z-index: 9999;
+          white-space: nowrap;
+        `;
+        document.body.appendChild(toast);
+      }
+
+      toast.textContent = 'Nenhuma nova notificação pendente.';
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateX(-50%) translateY(0)';
+
+      setTimeout(function () {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(-20px)';
+      }, 2500);
+    });
+  });
+});

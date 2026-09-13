@@ -1,0 +1,494 @@
+/* ======================================================
+   Adapt AI — Interface Mobile do Aluno (Sem Moldura)
+   Tela: Início / Minhas Atividades (Jornada)
+   ====================================================== */
+
+.page-aluno-mobile {
+  background-color: #F4F1F9;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  font-family: var(--font-family-primary, 'Baloo 2', sans-serif);
+  color: var(--roxo-escuro-100, #1B0735);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container do Aplicativo Mobile - Sem Moldura Falsa */
+.aluno-mobile-container {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  background-color: #FAF8FD;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 84px; /* Espaço para o menu inferior fixo */
+  overflow-x: hidden;
+  box-shadow: 0 0 24px rgba(27, 7, 53, 0.06);
+}
+
+/* ------------------------------------------------------
+   Header Mobile
+   ------------------------------------------------------ */
+.aluno-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px 12px;
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.aluno-header__logo {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.aluno-header__btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background-color: #EDE7FB;
+  border: 1px solid #E2D9F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aluno-header__btn:hover {
+  background-color: #E2D7F9;
+  transform: translateY(-1px);
+}
+
+/* ------------------------------------------------------
+   Saudação do Aluno
+   ------------------------------------------------------ */
+.aluno-welcome {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 24px 18px;
+}
+
+.aluno-welcome__avatar-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #D2F7D4; /* Verde pastel idêntico ao protótipo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.aluno-welcome__avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aluno-welcome__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.aluno-welcome__title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1B0735;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.aluno-welcome__subtitle {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #6A607C;
+  margin: 2px 0 0;
+}
+
+/* ------------------------------------------------------
+   Card "Em progresso" com Mascote
+   ------------------------------------------------------ */
+.aluno-progresso-bloco {
+  padding: 8px 24px 24px;
+  position: relative;
+}
+
+.aluno-progresso-bloco__label {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1B0735;
+  margin-bottom: 12px;
+}
+
+.aluno-card-wrapper {
+  position: relative;
+}
+
+/* Robô Mascote acenando por trás do card */
+.aluno-mascote-banner {
+  position: absolute;
+  top: -66px;
+  right: -6px;
+  width: 108px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 8px rgba(27, 7, 53, 0.12));
+  animation: floatMascot 3s ease-in-out infinite;
+}
+
+@keyframes floatMascot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.aluno-card-progresso {
+  background: #8534EC;
+  border-radius: 20px;
+  padding: 20px 22px 18px;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(27, 7, 53, 0.08);
+  position: relative;
+  z-index: 2;
+}
+
+.aluno-card-progresso__titulo {
+  font-size: 14.5px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  letter-spacing: -0.2px;
+}
+
+.aluno-card-progresso__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  font-weight: 600;
+  opacity: 0.95;
+  margin-bottom: 8px;
+}
+
+.aluno-card-progresso__bar-bg {
+  width: 100%;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.aluno-card-progresso__bar-fill {
+  height: 100%;
+  background-color: #8FD31A; /* Verde limão vibrante */
+  border-radius: 999px;
+  transition: width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ------------------------------------------------------
+   Trilha de Aprendizagem (Roadmap dos Desafios)
+   ------------------------------------------------------ */
+.aluno-trilha-container {
+  padding: 10px 24px 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Linha conectora pontilhada no fundo */
+.aluno-trilha-svg-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.aluno-trilha-passo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+.aluno-trilha-passo--right {
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.aluno-trilha-passo--left {
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.aluno-trilha-passo:hover {
+  transform: translateY(-2px);
+}
+
+/* Card descritivo do desafio */
+.trilha-card {
+  width: 136px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background-color: #EDE7FB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(27, 7, 53, 0.04);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.trilha-card strong {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1B0735;
+  line-height: 1.2;
+}
+
+.trilha-card span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6A607C;
+  margin-top: 2px;
+}
+
+/* Variações de cores dos cards */
+.trilha-card--purple {
+  background-color: #EDE7FB;
+  border: 1.5px solid #D9F0C4;
+}
+
+.trilha-card--coral {
+  background-color: #FDF1ED;
+  border: 1.5px solid #D9F0C4;
+}
+
+.trilha-card--cyan {
+  background-color: #E2F6FA;
+    border: 1.5px solid #D9F0C4;
+}
+
+.trilha-card--green {
+  background-color: #F2FCE8;
+  border: 1.5px solid #D9F0C4;
+}
+
+.trilha-card--green:hover {
+  border-color: #8FD31A;
+  box-shadow: 0 6px 16px rgba(143, 211, 26, 0.2);
+}
+
+.trilha-card--cyan:hover {
+  border-color: #07AED3;
+  box-shadow: 0 6px 16px rgba(7, 174, 211, 0.2);
+}
+.trilha-card--purple:hover {
+  border-color: purple;
+  box-shadow: 0 6px 16px rgba(150, 75, 200, 0.2);
+}
+.trilha-card--coral:hover {
+  border-color: coral;
+  box-shadow: 0 6px 16px rgba(236, 73, 35, 0.2);
+}
+
+/* Checkpoints Circulares */
+.trilha-checkpoint {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(27, 7, 53, 0.12);
+  transition: transform 0.2s ease;
+}
+
+.trilha-checkpoint:hover {
+  transform: scale(1.06);
+}
+
+.trilha-checkpoint__inner {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cores específicas dos nós da trilha */
+.trilha-checkpoint--purple {
+  background-color: #BD8EF9;
+}
+.trilha-checkpoint--purple .trilha-checkpoint__inner {
+  background-color: #9245F7;
+}
+
+.trilha-checkpoint--coral {
+  background-color: #F39C7E;
+}
+.trilha-checkpoint--coral .trilha-checkpoint__inner {
+  background-color: #EC4923;
+}
+
+.trilha-checkpoint--cyan {
+  background-color: #4FC2DA;
+}
+.trilha-checkpoint--cyan .trilha-checkpoint__inner {
+  background-color: #07AED3;
+}
+
+.trilha-checkpoint--green {
+  background-color: #BCE95D;
+}
+.trilha-checkpoint--green .trilha-checkpoint__inner {
+  background-color: #8FD31A;
+}
+
+/* Desafio Final (Coin dourada com raio) */
+.aluno-trilha-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.trilha-final__label {
+  background-color: transparent;
+  color: #1B0735;
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.2px;
+}
+
+.trilha-final__coin {
+  width: 72px;
+  height: 72px;
+  filter: drop-shadow(0 6px 14px rgba(255, 200, 0, 0.45));
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+.trilha-final__coin:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* ------------------------------------------------------
+   Barra de Navegação Inferior Mobile
+   ------------------------------------------------------ */
+.aluno-nav-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  height: 66px;
+  background-color: #FFFFFF;
+  border-top: 1px solid #EAE6F3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  box-shadow: 0 -4px 16px rgba(27, 7, 53, 0.04);
+}
+
+.aluno-nav-bottom__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aluno-nav-bottom__icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.55;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.aluno-nav-bottom__icon svg,
+.aluno-nav-bottom__icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.aluno-nav-bottom__item:hover .aluno-nav-bottom__icon {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* Estado Ativo na Barra Inferior */
+.aluno-nav-bottom__item.is-active .aluno-nav-bottom__icon {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.aluno-nav-bottom__item.is-active .aluno-nav-bottom__icon svg path {
+  fill: #8534EC !important;
+}
+
+/* Indicador em pílula roxa embaixo do ícone ativo */
+.aluno-nav-bottom__indicator {
+  display: none;
+  width: 28px;
+  height: 3.5px;
+  background-color: #8534EC;
+  border-radius: 999px;
+  position: absolute;
+  bottom: 6px;
+}
+
+.aluno-nav-bottom__item.is-active .aluno-nav-bottom__indicator {
+  display: block;
+}
+
+/* Responsividade Mobile nativa (Edge-to-Edge) */
+@media (max-width: 480px) {
+  .aluno-mobile-container {
+    max-width: 100%;
+    box-shadow: none;
+  }
+
+  .aluno-nav-bottom {
+    max-width: 100%;
+  }
+}

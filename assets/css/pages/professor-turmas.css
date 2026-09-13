@@ -435,11 +435,11 @@
 /* Banner Informativo com Mascote */
 .card-mascote-desafios {
   position: relative;
-  background: linear-gradient(135deg, #9245F7 0%, #7A28E5 100%);
+  background: var(--roxo-100, #8534EC);
   border-radius: var(--radius-xl);
   padding: 26px 22px;
   color: var(--branco);
-  box-shadow: var(--sombra-card-roxa);
+  box-shadow: 0 4px 14px rgba(27, 7, 53, 0.08);
   overflow: visible;
   display: flex;
   flex-direction: column;

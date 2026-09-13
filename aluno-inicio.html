@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adapt AI — Jornada do Aluno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/global/global.css">
+  <link rel="stylesheet" href="assets/css/all.css">
+  <link rel="stylesheet" href="assets/css/pages/aluno-atividades.css">
+</head>
+<body class="page-aluno-mobile">
+
+  <!-- Container Mobile Centralizado e Sem Moldura Falsa -->
+  <div class="aluno-mobile-container">
+
+    <!-- Header Mobile -->
+    <header class="aluno-header">
+      <img src="assets/images/logo-lilas.svg" alt="Adapt IA" class="aluno-header__logo">
+      <button type="button" class="aluno-header__btn" aria-label="Notificações">
+        <svg width="18" height="20" viewBox="0 0 18 20" fill="none">
+          <path d="M5.35179 18.2418C6.19288 19.311 7.51418 20 9 20C10.4858 20 11.8071 19.311 12.6482 18.2418C10.2264 18.57 7.77357 18.57 5.35179 18.2418Z" fill="#8534EC"/>
+          <path d="M15.7491 7V7.7041C15.7491 8.54909 15.9903 9.37517 16.4422 10.0782L17.5496 11.8012C18.5612 13.3749 17.789 15.5139 16.0296 16.0116C11.4273 17.3134 6.57274 17.3134 1.97036 16.0116C0.211046 15.5139 -0.561177 13.3749 0.450359 11.8012L1.5578 10.0782C2.00972 9.37517 2.25087 8.54909 2.25087 7.7041V7C2.25087 3.13401 5.27256 0 9 0C12.7274 0 15.7491 3.13401 15.7491 7Z" fill="#8534EC"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Saudação do Aluno -->
+    <section class="aluno-welcome">
+      <div class="aluno-welcome__avatar-wrap">
+        <img src="assets/images/icon/avatar.png" alt="Avatar de Mariana" class="aluno-welcome__avatar">
+      </div>
+      <div class="aluno-welcome__info">
+        <h1 class="aluno-welcome__title">Olá Mariana!</h1>
+        <p class="aluno-welcome__subtitle">Bem-vindo a sua jornada!</p>
+      </div>
+    </section>
+
+    <!-- Card "Em progresso:" com Mascote Acenando -->
+    <section class="aluno-progresso-bloco">
+      <h2 class="aluno-progresso-bloco__label">Em progresso:</h2>
+      <div class="aluno-card-wrapper">
+        <img src="assets/images/mascote/neutro.svg" alt="Robô Mascote acenando" class="aluno-mascote-banner">
+        <div class="aluno-card-progresso">
+          <h3 class="aluno-card-progresso__titulo">Desafio - Sistema Respiratório</h3>
+          <div class="aluno-card-progresso__meta">
+            <span>Nível 4</span>
+            <span>320/500</span>
+          </div>
+          <div class="aluno-card-progresso__bar-bg">
+            <div class="aluno-card-progresso__bar-fill" style="width: 64%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trilha de Aprendizagem (Roadmap com Checkpoints) -->
+    <section class="aluno-trilha-container">
+      <!-- Linha pontilhada conectando os desafios com curva fluida e checkpoints conectados -->
+      <svg class="aluno-trilha-svg-line" viewBox="0 0 380 448" fill="none" preserveAspectRatio="none">
+        <path d="M 309,37 C 320,75 60,75 71,113 C 60,151 320,151 309,189 C 320,227 60,227 71,265 C 60,323 190,323 190,382" 
+              stroke="#D6C6F7" stroke-width="4" stroke-dasharray="6 8" stroke-linecap="round"/>
+      </svg>
+
+      <!-- Nó 1: Desafio 01 (Card na esquerda, Checkpoint Roxo na direita) -->
+      <div class="aluno-trilha-passo aluno-trilha-passo--right">
+        <div class="trilha-card trilha-card--purple">
+          <strong>Desafio 01</strong>
+          <span>Introdução</span>
+        </div>
+        <div class="trilha-checkpoint trilha-checkpoint--purple">
+          <div class="trilha-checkpoint__inner"></div>
+        </div>
+      </div>
+
+      <!-- Nó 2: Desafio 02 (Checkpoint Coral na esquerda, Card na direita) -->
+      <div class="aluno-trilha-passo aluno-trilha-passo--left">
+        <div class="trilha-checkpoint trilha-checkpoint--coral">
+          <div class="trilha-checkpoint__inner"></div>
+        </div>
+        <div class="trilha-card trilha-card--coral">
+          <strong>Desafio 02</strong>
+          <span>Tratos</span>
+        </div>
+      </div>
+
+      <!-- Nó 3: Desafio 03 (Card na esquerda, Checkpoint Ciano na direita) -->
+      <div class="aluno-trilha-passo aluno-trilha-passo--right">
+        <div class="trilha-card trilha-card--cyan">
+          <strong>Desafio 03</strong>
+          <span>Funções</span>
+        </div>
+        <div class="trilha-checkpoint trilha-checkpoint--cyan">
+          <div class="trilha-checkpoint__inner"></div>
+        </div>
+      </div>
+
+      <!-- Nó 4: Desafio 04 (Checkpoint Verde na esquerda, Card na direita) -> Ativo / Clicável! -->
+      <a href="aluno-desafio.html" class="aluno-trilha-passo aluno-trilha-passo--left" title="Abrir Desafio 04">
+        <div class="trilha-checkpoint trilha-checkpoint--green">
+          <div class="trilha-checkpoint__inner"></div>
+        </div>
+        <div class="trilha-card trilha-card--green">
+          <strong>Desafio 04</strong>
+          <span>Hematose</span>
+        </div>
+      </a>
+
+      <!-- Nó Final: Desafio Final (Medalha/Coin Dourada) -->
+      <div class="aluno-trilha-final">
+        <span class="trilha-final__label">Desafio Final</span>
+        <img src="assets/images/icon/checkpoint-desafio-final.svg" alt="Checkpoint Desafio Final" class="trilha-final__coin">
+      </div>
+    </section>
+
+    <!-- Barra de Navegação Inferior Mobile -->
+    <nav class="aluno-nav-bottom" aria-label="Navegação inferior">
+      <a href="aluno-inicio.html" class="aluno-nav-bottom__item is-active" aria-label="Início">
+        <span class="aluno-nav-bottom__icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5192 5.82274C0 6.77128 0 7.91549 0 10.2039V11.725C0 15.6258 0 17.5763 1.17157 18.7881C2.34315 20 4.22876 20 8 20H12C15.7712 20 17.6569 20 18.8284 18.7881C20 17.5763 20 15.6258 20 11.725V10.2039C20 7.91549 20 6.77128 19.4808 5.82274C18.9616 4.87421 18.0131 4.28551 16.116 3.10812L14.116 1.86687C12.1106 0.62229 11.1079 0 10 0C8.89206 0 7.88939 0.62229 5.88403 1.86687L3.88403 3.10813C1.98695 4.28551 1.0384 4.87421 0.5192 5.82274ZM7 15.25C6.58579 15.25 6.25 15.5858 6.25 16C6.25 16.4142 6.58579 16.75 7 16.75H13C13.4142 16.75 13.75 16.4142 13.75 16C13.75 15.5858 13.4142 15.25 13 15.25H7Z" fill="#8534EC"/>
+          </svg>
+        </span>
+        <span class="aluno-nav-bottom__indicator"></span>
+      </a>
+
+      <a href="aluno-atividades-personalizadas.html" class="aluno-nav-bottom__item" aria-label="Atividades Personalizadas">
+        <span class="aluno-nav-bottom__icon">
+          <svg width="20" height="18" viewBox="0 0 20 18" fill="none">
+            <path d="M0 5.85219C0 10.7151 4.01943 13.3065 6.96173 15.626C8 16.4445 9 17.2151 10 17.2151C11 17.2151 12 16.4445 13.0383 15.626C15.9806 13.3065 20 10.7151 20 5.85219C20 0.989251 14.4998 -2.45945 10 2.21572C5.50016 -2.45945 0 0.989251 0 5.85219Z" fill="#CFD6DC"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- Troféu: Meu Desempenho -->
+      <a href="aluno-meu-desempenho.html" class="aluno-nav-bottom__item" aria-label="Meu Desempenho">
+        <span class="aluno-nav-bottom__icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5 2C2.67157 2 2 2.67157 2 3.5V6C2 8.20914 3.79086 10 6 10H6.26C6.88457 11.4116 8.16365 12.4406 9.725 12.6957V15H8C7.44772 15 7 15.4477 7 16V17.5C7 18.0523 7.44772 18.5 8 18.5H12C12.5523 18.5 13 18.0523 13 17.5V16C13 15.4477 12.5523 15 12 15H10.275V12.6957C11.8364 12.4406 13.1154 11.4116 13.74 10H14C16.2091 10 18 8.20914 18 6V3.5C18 2.67157 17.3284 2 16.5 2H3.5ZM3.75 3.75H5.25V8.25C4.42157 8.25 3.75 7.57843 3.75 6.75V3.75ZM14.75 8.25V3.75H16.25V6.75C16.25 7.57843 15.5784 8.25 14.75 8.25ZM7 3.75H13V8C13 9.65685 11.6569 11 10 11C8.34315 11 7 9.65685 7 8V3.75Z" fill="#CFD6DC"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- Engrenagem: Configurações -->
+      <a href="#" class="aluno-nav-bottom__item" aria-label="Configurações">
+        <span class="aluno-nav-bottom__icon">
+          <svg width="19" height="20" viewBox="0 0 19 20" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2788 0.152241C10.9085 0 10.439 0 9.5 0C8.56102 0 8.09153 0 7.72119 0.152241C7.2274 0.355229 6.83509 0.744577 6.63056 1.23463C6.53719 1.45834 6.50065 1.7185 6.48635 2.09799C6.46534 2.65568 6.17716 3.17189 5.69017 3.45093C5.20318 3.72996 4.60864 3.71954 4.11149 3.45876C3.77318 3.2813 3.52789 3.18262 3.28599 3.15102C2.75609 3.08178 2.22018 3.22429 1.79616 3.5472C1.47814 3.78938 1.24339 4.1929 0.773903 4.99993C0.304414 5.80697 0.069669 6.21048 0.017347 6.60491C-0.0524154 7.1308 0.0911811 7.66266 0.416547 8.08348C0.565055 8.27556 0.773773 8.43703 1.0977 8.63902C1.57391 8.93598 1.88032 9.44186 1.88029 10C1.88026 10.5581 1.57386 11.0639 1.0977 11.3608C0.773716 11.5629 0.564971 11.7244 0.416448 11.9165C0.0910824 12.3373 -0.0525141 12.8691 0.0172484 13.395C0.0695703 13.7894 0.304315 14.193 0.773804 15C1.24329 15.807 1.47804 16.2106 1.79606 16.4527C2.22008 16.7756 2.75599 16.9181 3.28589 16.8489C3.52778 16.8173 3.77305 16.7186 4.11133 16.5412C4.60852 16.2804 5.2031 16.27 5.69012 16.549C6.17714 16.8281 6.46533 17.3443 6.48635 17.9021C6.50065 18.2815 6.53719 18.5417 6.63056 18.7654C6.83509 19.2554 7.2274 19.6448 7.72119 19.8478C8.09153 20 8.56102 20 9.5 20C10.439 20 10.9085 20 11.2788 19.8478C11.7726 19.6448 12.1649 19.2554 12.3694 18.7654C12.4628 18.5417 12.4994 18.2815 12.5137 17.902C12.5347 17.3443 12.8228 16.8281 13.3098 16.549C13.7968 16.2699 14.3914 16.2804 14.8886 16.5412C15.2269 16.7186 15.4721 16.8172 15.714 16.8488C16.2439 16.9181 16.7798 16.7756 17.2038 16.4527C17.5219 16.2105 17.7566 15.807 18.2261 14.9999C18.6956 14.1929 18.9303 13.7894 18.9827 13.395C19.0524 12.8691 18.9088 12.3372 18.5835 11.9164C18.4349 11.7243 18.2262 11.5628 17.9022 11.3608C17.4261 11.0639 17.1197 10.558 17.1197 9.99991C17.1197 9.44185 17.4261 8.93608 17.9022 8.63919C18.2263 8.43715 18.435 8.27566 18.5836 8.08355C18.9089 7.66273 19.0525 7.13087 18.9828 6.60497C18.9304 6.21055 18.6957 5.80703 18.2262 5C17.7567 4.19297 17.522 3.78945 17.2039 3.54727C16.7799 3.22436 16.244 3.08185 15.7141 3.15109C15.4722 3.18269 15.2269 3.28136 14.8887 3.4588C14.3915 3.71959 13.7969 3.73002 13.3099 3.45096C12.8229 3.17191 12.5347 2.65566 12.5136 2.09794C12.4993 1.71848 12.4628 1.45833 12.3694 1.23463C12.1649 0.744577 11.7726 0.355229 11.2788 0.152241ZM9.5 13C11.1695 13 12.5228 11.6569 12.5228 10C12.5228 8.34315 11.1695 7 9.5 7C7.83053 7 6.47716 8.34315 6.47716 10C6.47716 11.6569 7.83053 13 9.5 13Z" fill="#CFD6DC"/>
+          </svg>
+        </span>
+      </a>
+    </nav>
+
+  </div>
+
+  <script src="assets/js/global/global.js"></script>
+</body>
+</html>
